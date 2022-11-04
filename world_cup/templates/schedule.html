@@ -26,6 +26,9 @@
             <td><img src="/static/flags/{{match.home_team.alpha_2}}.gif" alt="{{match.home_team.name}} flag"/>{{match.home_team.name}}</td>
             <td>{{match.away_team.name}}<img src="/static/flags/{{match.away_team.alpha_2}}.gif" alt="{{match.away_team.name}} flag"/></td>
             <td>{{match.stadium.name}}</td>
+            {% if match.home_score and match.away_score %}
+                <td>Score: {{match.home_score}} - {{match.away_score}}</td>
+            {% endif %}
         </tr>
         {% endfor %}
     </tbody>

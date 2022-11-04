@@ -40,7 +40,9 @@
             },
             "alpha_2": "SN",
             "id": 24
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "2": {
         "stadium": {
@@ -82,7 +84,9 @@
             },
             "alpha_2": "QA",
             "id": 22
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "3": {
         "stadium": {
@@ -125,7 +129,9 @@
             },
             "alpha_2": "EN",
             "id": 11
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "4": {
         "stadium": {
@@ -168,7 +174,9 @@
             },
             "alpha_2": "US",
             "id": 30
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "5": {
         "stadium": {
@@ -210,7 +218,9 @@
             },
             "alpha_2": "AR",
             "id": 1
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "6": {
         "stadium": {
@@ -255,7 +265,9 @@
             },
             "alpha_2": "MX",
             "id": 17
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "7": {
         "stadium": {
@@ -294,7 +306,9 @@
             },
             "alpha_2": "DK",
             "id": 9
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "8": {
         "stadium": {
@@ -337,7 +351,9 @@
             },
             "alpha_2": "FR",
             "id": 12
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "9": {
         "stadium": {
@@ -385,7 +401,9 @@
             },
             "alpha_2": "DE",
             "id": 13
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "10": {
         "stadium": {
@@ -427,7 +445,9 @@
             },
             "alpha_2": "ES",
             "id": 27
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "11": {
         "stadium": {
@@ -467,7 +487,9 @@
             },
             "alpha_2": "MA",
             "id": 18
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "12": {
         "stadium": {
@@ -511,7 +533,9 @@
             },
             "alpha_2": "BE",
             "id": 3
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "13": {
         "stadium": {
@@ -551,7 +575,9 @@
             },
             "alpha_2": "CH",
             "id": 28
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "14": {
         "stadium": {
@@ -594,7 +620,9 @@
             },
             "alpha_2": "BR",
             "id": 4
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "15": {
         "stadium": {
@@ -638,7 +666,9 @@
             },
             "alpha_2": "UY",
             "id": 31
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "16": {
         "stadium": {
@@ -685,7 +715,9 @@
             },
             "alpha_2": "PT",
             "id": 21
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "17": {
         "stadium": {
@@ -725,7 +757,9 @@
             },
             "alpha_2": "QA",
             "id": 22
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "18": {
         "stadium": {
@@ -770,7 +804,9 @@
             },
             "alpha_2": "NL",
             "id": 19
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "19": {
         "stadium": {
@@ -813,7 +849,9 @@
             },
             "alpha_2": "WL",
             "id": 32
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "20": {
         "stadium": {
@@ -856,7 +894,9 @@
             },
             "alpha_2": "EN",
             "id": 11
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "21": {
         "stadium": {
@@ -895,7 +935,9 @@
             },
             "alpha_2": "PL",
             "id": 20
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "22": {
         "stadium": {
@@ -943,7 +985,9 @@
             },
             "alpha_2": "AR",
             "id": 1
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "23": {
         "stadium": {
@@ -985,7 +1029,9 @@
             },
             "alpha_2": "TN",
             "id": 29
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "24": {
         "stadium": {
@@ -1025,7 +1071,9 @@
             },
             "alpha_2": "FR",
             "id": 12
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "25": {
         "stadium": {
@@ -1072,7 +1120,9 @@
             },
             "alpha_2": "JP",
             "id": 16
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "26": {
         "stadium": {
@@ -1115,7 +1165,9 @@
             },
             "alpha_2": "ES",
             "id": 27
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "27": {
         "stadium": {
@@ -1157,7 +1209,9 @@
             },
             "alpha_2": "BE",
             "id": 3
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "28": {
         "stadium": {
@@ -1199,7 +1253,9 @@
             },
             "alpha_2": "HR",
             "id": 8
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "29": {
         "stadium": {
@@ -1240,7 +1296,9 @@
             },
             "alpha_2": "CM",
             "id": 5
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "30": {
         "stadium": {
@@ -1282,7 +1340,9 @@
             },
             "alpha_2": "BR",
             "id": 4
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "31": {
         "stadium": {
@@ -1327,7 +1387,9 @@
             },
             "alpha_2": "KR",
             "id": 26
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "32": {
         "stadium": {
@@ -1373,7 +1435,9 @@
             },
             "alpha_2": "PT",
             "id": 21
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "33": {
         "stadium": {
@@ -1415,7 +1479,9 @@
             },
             "alpha_2": "NL",
             "id": 19
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "34": {
         "stadium": {
@@ -1458,7 +1524,9 @@
             },
             "alpha_2": "EC",
             "id": 10
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "35": {
         "stadium": {
@@ -1499,7 +1567,9 @@
             },
             "alpha_2": "IR",
             "id": 15
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "36": {
         "stadium": {
@@ -1544,7 +1614,9 @@
             },
             "alpha_2": "WL",
             "id": 32
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "37": {
         "stadium": {
@@ -1586,7 +1658,9 @@
             },
             "alpha_2": "PL",
             "id": 20
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "38": {
         "stadium": {
@@ -1631,7 +1705,9 @@
             },
             "alpha_2": "SA",
             "id": 23
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "39": {
         "stadium": {
@@ -1673,7 +1749,9 @@
             },
             "alpha_2": "AU",
             "id": 2
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "40": {
         "stadium": {
@@ -1713,7 +1791,9 @@
             },
             "alpha_2": "TN",
             "id": 29
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "41": {
         "stadium": {
@@ -1757,7 +1837,9 @@
             },
             "alpha_2": "JP",
             "id": 16
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "42": {
         "stadium": {
@@ -1803,7 +1885,9 @@
             },
             "alpha_2": "CR",
             "id": 7
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "43": {
         "stadium": {
@@ -1846,7 +1930,9 @@
             },
             "alpha_2": "HR",
             "id": 8
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "44": {
         "stadium": {
@@ -1887,7 +1973,9 @@
             },
             "alpha_2": "CA",
             "id": 6
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "45": {
         "stadium": {
@@ -1927,7 +2015,9 @@
             },
             "alpha_2": "RS",
             "id": 25
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "46": {
         "stadium": {
@@ -1970,7 +2060,9 @@
             },
             "alpha_2": "CM",
             "id": 5
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "47": {
         "stadium": {
@@ -2018,7 +2110,9 @@
             },
             "alpha_2": "GH",
             "id": 14
-        }
+        },
+        "score_home": null,
+        "score_away": null
     },
     "48": {
         "stadium": {
