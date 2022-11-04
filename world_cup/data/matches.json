@@ -1,0 +1,2162 @@
+{
+    "1": {
+        "stadium": {
+            "longitude": 51.53224644,
+            "name": "Al Thumama Stadium",
+            "id": 4,
+            "latitude": 25.23520905
+        },
+        "away_team": {
+            "name": "Netherlands",
+            "alpha_3": "NLD",
+            "official_name": "Kingdom of the Netherlands",
+            "colors": {
+                "primary": [
+                    "#FF7F00"
+                ],
+                "secondary": [
+                    "#FF0000",
+                    "#FFFFFF",
+                    "#0000FF"
+                ]
+            },
+            "alpha_2": "NL",
+            "id": 19
+        },
+        "group": "A",
+        "date": "2022-11-21T10:00:00",
+        "id": 1,
+        "home_team": {
+            "name": "Senegal",
+            "alpha_3": "SEN",
+            "official_name": "Republic of Senegal",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFFF00",
+                    "#FF0000"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "SN",
+            "id": 24
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "2": {
+        "stadium": {
+            "longitude": 51.48780547,
+            "name": "Al Bayt Stadium",
+            "id": 2,
+            "latitude": 25.6521339
+        },
+        "away_team": {
+            "name": "Ecuador",
+            "alpha_3": "ECU",
+            "official_name": "Republic of Ecuador",
+            "colors": {
+                "primary": [
+                    "#FFFF00",
+                    "#0000FF",
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#93CCEA"
+                ]
+            },
+            "alpha_2": "EC",
+            "id": 10
+        },
+        "group": "A",
+        "date": "2022-11-21T16:00:00",
+        "id": 2,
+        "home_team": {
+            "name": "Qatar",
+            "alpha_3": "QAT",
+            "official_name": "State of Qatar",
+            "colors": {
+                "primary": [
+                    "#800000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "QA",
+            "id": 22
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "3": {
+        "stadium": {
+            "longitude": 51.44828648,
+            "name": "Khalifa International Stadium",
+            "id": 6,
+            "latitude": 25.26367575
+        },
+        "away_team": {
+            "name": "Iran",
+            "alpha_3": "IRN",
+            "official_name": "Islamic Republic of Iran",
+            "colors": {
+                "primary": [
+                    "#239F40",
+                    "#DA0000",
+                    "#000000"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "IR",
+            "id": 15
+        },
+        "group": "B",
+        "date": "2022-11-21T13:00:00",
+        "id": 3,
+        "home_team": {
+            "name": "England",
+            "alpha_3": "ENG",
+            "official_name": "United Kingdom of Great Britain and Northern Ireland",
+            "colors": {
+                "primary": [
+                    "#EA1F29",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#2B57AC",
+                    "#000040"
+                ]
+            },
+            "alpha_2": "EN",
+            "id": 11
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "4": {
+        "stadium": {
+            "longitude": 51.34232175,
+            "name": "Ahmad Bin Ali Stadium",
+            "id": 1,
+            "latitude": 25.32969165
+        },
+        "away_team": {
+            "name": "Wales",
+            "alpha_3": "WAL",
+            "official_name": "United Kingdom of Great Britain and Northern Ireland",
+            "colors": {
+                "primary": [
+                    "#174A3F",
+                    "#AE2630",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#CF1E26"
+                ]
+            },
+            "alpha_2": "WL",
+            "id": 32
+        },
+        "group": "B",
+        "date": "2022-11-21T19:00:00",
+        "id": 4,
+        "home_team": {
+            "name": "USA",
+            "alpha_3": "USA",
+            "official_name": "United States of America",
+            "colors": {
+                "primary": [
+                    "#BB2533",
+                    "#1F2742",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "US",
+            "id": 30
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "5": {
+        "stadium": {
+            "longitude": 51.49041242,
+            "name": "Lusail Stadium",
+            "id": 7,
+            "latitude": 25.42079535
+        },
+        "away_team": {
+            "name": "Saudi Arabia",
+            "alpha_3": "SAU",
+            "official_name": "Kingdom of Saudi Arabia",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "SA",
+            "id": 23
+        },
+        "group": "C",
+        "date": "2022-11-22T10:00:00",
+        "id": 5,
+        "home_team": {
+            "name": "Argentina",
+            "alpha_3": "ARG",
+            "official_name": "Argentine Republic",
+            "colors": {
+                "primary": [
+                    "#75AADB",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#006A93",
+                    "#000000"
+                ]
+            },
+            "alpha_2": "AR",
+            "id": 1
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "6": {
+        "stadium": {
+            "longitude": 51.56639909,
+            "name": "Stadium 974",
+            "id": 8,
+            "latitude": 25.28878815
+        },
+        "away_team": {
+            "name": "Poland",
+            "alpha_3": "POL",
+            "official_name": "Republic of Poland",
+            "colors": {
+                "primary": [
+                    "#FFFFFF",
+                    "#FF0000"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "PL",
+            "id": 20
+        },
+        "group": "C",
+        "date": "2022-11-22T16:00:00",
+        "id": 6,
+        "home_team": {
+            "name": "Mexico",
+            "alpha_3": "MEX",
+            "official_name": "United Mexican States",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFFFFF",
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#000000",
+                    "#B94E48",
+                    "#F653A6",
+                    "#CCFF00"
+                ]
+            },
+            "alpha_2": "MX",
+            "id": 17
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "7": {
+        "stadium": {
+            "longitude": 51.42444766,
+            "name": "Education City Stadium",
+            "id": 5,
+            "latitude": 25.31085325
+        },
+        "away_team": {
+            "name": "Tunisia",
+            "alpha_3": "TUN",
+            "official_name": "Republic of Tunisia",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "TN",
+            "id": 29
+        },
+        "group": "D",
+        "date": "2022-11-22T13:00:00",
+        "id": 7,
+        "home_team": {
+            "name": "Denmark",
+            "alpha_3": "DNK",
+            "official_name": "Kingdom of Denmark",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "DK",
+            "id": 9
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "8": {
+        "stadium": {
+            "longitude": 51.5742271,
+            "name": "Al Janoub Stadium",
+            "id": 3,
+            "latitude": 25.15970785
+        },
+        "away_team": {
+            "name": "Australia",
+            "alpha_3": "AUS",
+            "official_name": "Australia",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFD700"
+                ],
+                "secondary": [
+                    "#00008B",
+                    "#FFFFFF"
+                ]
+            },
+            "alpha_2": "AU",
+            "id": 2
+        },
+        "group": "D",
+        "date": "2022-11-22T19:00:00",
+        "id": 8,
+        "home_team": {
+            "name": "France",
+            "alpha_3": "FRA",
+            "official_name": "French Republic",
+            "colors": {
+                "primary": [
+                    "#0000FF",
+                    "#FFFFFF",
+                    "#FF0000"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "FR",
+            "id": 12
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "9": {
+        "stadium": {
+            "longitude": 51.44828648,
+            "name": "Khalifa International Stadium",
+            "id": 6,
+            "latitude": 25.26367575
+        },
+        "away_team": {
+            "name": "Japan",
+            "alpha_3": "JPN",
+            "official_name": "Japan",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#000000",
+                    "#00008B",
+                    "#FFFFFF",
+                    "#E8F48C"
+                ]
+            },
+            "alpha_2": "JP",
+            "id": 16
+        },
+        "group": "E",
+        "date": "2022-11-23T13:00:00",
+        "id": 9,
+        "home_team": {
+            "name": "Germany",
+            "alpha_3": "DEU",
+            "official_name": "Federal Republic of Germany",
+            "colors": {
+                "primary": [
+                    "#000000",
+                    "#FF0000",
+                    "#FFD700"
+                ],
+                "secondary": [
+                    "#FFFFFF",
+                    "#C0C0C0"
+                ]
+            },
+            "alpha_2": "DE",
+            "id": 13
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "10": {
+        "stadium": {
+            "longitude": 51.53224644,
+            "name": "Al Thumama Stadium",
+            "id": 4,
+            "latitude": 25.23520905
+        },
+        "away_team": {
+            "name": "Costa Rica",
+            "alpha_3": "CRI",
+            "official_name": "Republic of Costa Rica",
+            "colors": {
+                "primary": [
+                    "#0000FF",
+                    "#FFFFFF",
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#000000"
+                ]
+            },
+            "alpha_2": "CR",
+            "id": 7
+        },
+        "group": "E",
+        "date": "2022-11-23T16:00:00",
+        "id": 10,
+        "home_team": {
+            "name": "Spain",
+            "alpha_3": "ESP",
+            "official_name": "Kingdom of Spain",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFD700"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "ES",
+            "id": 27
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "11": {
+        "stadium": {
+            "longitude": 51.48780547,
+            "name": "Al Bayt Stadium",
+            "id": 2,
+            "latitude": 25.6521339
+        },
+        "away_team": {
+            "name": "Croatia",
+            "alpha_3": "HRV",
+            "official_name": "Republic of Croatia",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF",
+                    "#0000FF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "HR",
+            "id": 8
+        },
+        "group": "F",
+        "date": "2022-11-23T10:00:00",
+        "id": 11,
+        "home_team": {
+            "name": "Morocco",
+            "alpha_3": "MAR",
+            "official_name": "Kingdom of Morocco",
+            "colors": {
+                "primary": [
+                    "#C22229",
+                    "#006230"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "MA",
+            "id": 18
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "12": {
+        "stadium": {
+            "longitude": 51.34232175,
+            "name": "Ahmad Bin Ali Stadium",
+            "id": 1,
+            "latitude": 25.32969165
+        },
+        "away_team": {
+            "name": "Canada",
+            "alpha_3": "CAN",
+            "official_name": "Canada",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#000000"
+                ]
+            },
+            "alpha_2": "CA",
+            "id": 6
+        },
+        "group": "F",
+        "date": "2022-11-23T19:00:00",
+        "id": 12,
+        "home_team": {
+            "name": "Belgium",
+            "alpha_3": "BEL",
+            "official_name": "Kingdom of Belgium",
+            "colors": {
+                "primary": [
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#000000",
+                    "#FFFF00",
+                    "#75AADB"
+                ]
+            },
+            "alpha_2": "BE",
+            "id": 3
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "13": {
+        "stadium": {
+            "longitude": 51.5742271,
+            "name": "Al Janoub Stadium",
+            "id": 3,
+            "latitude": 25.15970785
+        },
+        "away_team": {
+            "name": "Cameroon",
+            "alpha_3": "CMR",
+            "official_name": "Republic of Cameroon",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FF0000",
+                    "#FFFF00"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "CM",
+            "id": 5
+        },
+        "group": "G",
+        "date": "2022-11-24T10:00:00",
+        "id": 13,
+        "home_team": {
+            "name": "Switzerland",
+            "alpha_3": "CHE",
+            "official_name": "Swiss Confederation",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "CH",
+            "id": 28
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "14": {
+        "stadium": {
+            "longitude": 51.49041242,
+            "name": "Lusail Stadium",
+            "id": 7,
+            "latitude": 25.42079535
+        },
+        "away_team": {
+            "name": "Serbia",
+            "alpha_3": "SRB",
+            "official_name": "Republic of Serbia",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#0000CC",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "RS",
+            "id": 25
+        },
+        "group": "G",
+        "date": "2022-11-24T19:00:00",
+        "id": 14,
+        "home_team": {
+            "name": "Brazil",
+            "alpha_3": "BRA",
+            "official_name": "Federative Republic of Brazil",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFFF00"
+                ],
+                "secondary": [
+                    "#0000FF",
+                    "#FFFFFF"
+                ]
+            },
+            "alpha_2": "BR",
+            "id": 4
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "15": {
+        "stadium": {
+            "longitude": 51.42444766,
+            "name": "Education City Stadium",
+            "id": 5,
+            "latitude": 25.31085325
+        },
+        "away_team": {
+            "name": "South Korea",
+            "alpha_3": "KOR",
+            "official_name": "Republic of Korea",
+            "colors": {
+                "primary": [
+                    "#EC0F32",
+                    "#021858",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "KR",
+            "id": 26
+        },
+        "group": "H",
+        "date": "2022-11-24T13:00:00",
+        "id": 15,
+        "home_team": {
+            "name": "Uruguay",
+            "alpha_3": "URY",
+            "official_name": "Eastern Republic of Uruguay",
+            "colors": {
+                "primary": [
+                    "#0000FF",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#FF0000",
+                    "#75AADB",
+                    "#000000"
+                ]
+            },
+            "alpha_2": "UY",
+            "id": 31
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "16": {
+        "stadium": {
+            "longitude": 51.56639909,
+            "name": "Stadium 974",
+            "id": 8,
+            "latitude": 25.28878815
+        },
+        "away_team": {
+            "name": "Ghana",
+            "alpha_3": "GHA",
+            "official_name": "Republic of Ghana",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFF00",
+                    "#008000",
+                    "#000000"
+                ],
+                "secondary": [
+                    "#000000",
+                    "#FFFFFF"
+                ]
+            },
+            "alpha_2": "GH",
+            "id": 14
+        },
+        "group": "H",
+        "date": "2022-11-24T16:00:00",
+        "id": 16,
+        "home_team": {
+            "name": "Portugal",
+            "alpha_3": "PRT",
+            "official_name": "Portuguese Republic",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#FFFFFF",
+                    "#0000FF"
+                ]
+            },
+            "alpha_2": "PT",
+            "id": 21
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "17": {
+        "stadium": {
+            "longitude": 51.53224644,
+            "name": "Al Thumama Stadium",
+            "id": 4,
+            "latitude": 25.23520905
+        },
+        "away_team": {
+            "name": "Senegal",
+            "alpha_3": "SEN",
+            "official_name": "Republic of Senegal",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFFF00",
+                    "#FF0000"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "SN",
+            "id": 24
+        },
+        "group": "A",
+        "date": "2022-11-25T13:00:00",
+        "id": 17,
+        "home_team": {
+            "name": "Qatar",
+            "alpha_3": "QAT",
+            "official_name": "State of Qatar",
+            "colors": {
+                "primary": [
+                    "#800000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "QA",
+            "id": 22
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "18": {
+        "stadium": {
+            "longitude": 51.44828648,
+            "name": "Khalifa International Stadium",
+            "id": 6,
+            "latitude": 25.26367575
+        },
+        "away_team": {
+            "name": "Ecuador",
+            "alpha_3": "ECU",
+            "official_name": "Republic of Ecuador",
+            "colors": {
+                "primary": [
+                    "#FFFF00",
+                    "#0000FF",
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#93CCEA"
+                ]
+            },
+            "alpha_2": "EC",
+            "id": 10
+        },
+        "group": "A",
+        "date": "2022-11-25T16:00:00",
+        "id": 18,
+        "home_team": {
+            "name": "Netherlands",
+            "alpha_3": "NLD",
+            "official_name": "Kingdom of the Netherlands",
+            "colors": {
+                "primary": [
+                    "#FF7F00"
+                ],
+                "secondary": [
+                    "#FF0000",
+                    "#FFFFFF",
+                    "#0000FF"
+                ]
+            },
+            "alpha_2": "NL",
+            "id": 19
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "19": {
+        "stadium": {
+            "longitude": 51.34232175,
+            "name": "Ahmad Bin Ali Stadium",
+            "id": 1,
+            "latitude": 25.32969165
+        },
+        "away_team": {
+            "name": "Iran",
+            "alpha_3": "IRN",
+            "official_name": "Islamic Republic of Iran",
+            "colors": {
+                "primary": [
+                    "#239F40",
+                    "#DA0000",
+                    "#000000"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "IR",
+            "id": 15
+        },
+        "group": "B",
+        "date": "2022-11-25T10:00:00",
+        "id": 19,
+        "home_team": {
+            "name": "Wales",
+            "alpha_3": "WAL",
+            "official_name": "United Kingdom of Great Britain and Northern Ireland",
+            "colors": {
+                "primary": [
+                    "#174A3F",
+                    "#AE2630",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#CF1E26"
+                ]
+            },
+            "alpha_2": "WL",
+            "id": 32
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "20": {
+        "stadium": {
+            "longitude": 51.48780547,
+            "name": "Al Bayt Stadium",
+            "id": 2,
+            "latitude": 25.6521339
+        },
+        "away_team": {
+            "name": "USA",
+            "alpha_3": "USA",
+            "official_name": "United States of America",
+            "colors": {
+                "primary": [
+                    "#BB2533",
+                    "#1F2742",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "US",
+            "id": 30
+        },
+        "group": "B",
+        "date": "2022-11-25T19:00:00",
+        "id": 20,
+        "home_team": {
+            "name": "England",
+            "alpha_3": "ENG",
+            "official_name": "United Kingdom of Great Britain and Northern Ireland",
+            "colors": {
+                "primary": [
+                    "#EA1F29",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#2B57AC",
+                    "#000040"
+                ]
+            },
+            "alpha_2": "EN",
+            "id": 11
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "21": {
+        "stadium": {
+            "longitude": 51.42444766,
+            "name": "Education City Stadium",
+            "id": 5,
+            "latitude": 25.31085325
+        },
+        "away_team": {
+            "name": "Saudi Arabia",
+            "alpha_3": "SAU",
+            "official_name": "Kingdom of Saudi Arabia",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "SA",
+            "id": 23
+        },
+        "group": "C",
+        "date": "2022-11-26T13:00:00",
+        "id": 21,
+        "home_team": {
+            "name": "Poland",
+            "alpha_3": "POL",
+            "official_name": "Republic of Poland",
+            "colors": {
+                "primary": [
+                    "#FFFFFF",
+                    "#FF0000"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "PL",
+            "id": 20
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "22": {
+        "stadium": {
+            "longitude": 51.49041242,
+            "name": "Lusail Stadium",
+            "id": 7,
+            "latitude": 25.42079535
+        },
+        "away_team": {
+            "name": "Mexico",
+            "alpha_3": "MEX",
+            "official_name": "United Mexican States",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFFFFF",
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#000000",
+                    "#B94E48",
+                    "#F653A6",
+                    "#CCFF00"
+                ]
+            },
+            "alpha_2": "MX",
+            "id": 17
+        },
+        "group": "C",
+        "date": "2022-11-26T19:00:00",
+        "id": 22,
+        "home_team": {
+            "name": "Argentina",
+            "alpha_3": "ARG",
+            "official_name": "Argentine Republic",
+            "colors": {
+                "primary": [
+                    "#75AADB",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#006A93",
+                    "#000000"
+                ]
+            },
+            "alpha_2": "AR",
+            "id": 1
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "23": {
+        "stadium": {
+            "longitude": 51.5742271,
+            "name": "Al Janoub Stadium",
+            "id": 3,
+            "latitude": 25.15970785
+        },
+        "away_team": {
+            "name": "Australia",
+            "alpha_3": "AUS",
+            "official_name": "Australia",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFD700"
+                ],
+                "secondary": [
+                    "#00008B",
+                    "#FFFFFF"
+                ]
+            },
+            "alpha_2": "AU",
+            "id": 2
+        },
+        "group": "D",
+        "date": "2022-11-26T10:00:00",
+        "id": 23,
+        "home_team": {
+            "name": "Tunisia",
+            "alpha_3": "TUN",
+            "official_name": "Republic of Tunisia",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "TN",
+            "id": 29
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "24": {
+        "stadium": {
+            "longitude": 51.56639909,
+            "name": "Stadium 974",
+            "id": 8,
+            "latitude": 25.28878815
+        },
+        "away_team": {
+            "name": "Denmark",
+            "alpha_3": "DNK",
+            "official_name": "Kingdom of Denmark",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "DK",
+            "id": 9
+        },
+        "group": "D",
+        "date": "2022-11-26T16:00:00",
+        "id": 24,
+        "home_team": {
+            "name": "France",
+            "alpha_3": "FRA",
+            "official_name": "French Republic",
+            "colors": {
+                "primary": [
+                    "#0000FF",
+                    "#FFFFFF",
+                    "#FF0000"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "FR",
+            "id": 12
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "25": {
+        "stadium": {
+            "longitude": 51.34232175,
+            "name": "Ahmad Bin Ali Stadium",
+            "id": 1,
+            "latitude": 25.32969165
+        },
+        "away_team": {
+            "name": "Costa Rica",
+            "alpha_3": "CRI",
+            "official_name": "Republic of Costa Rica",
+            "colors": {
+                "primary": [
+                    "#0000FF",
+                    "#FFFFFF",
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#000000"
+                ]
+            },
+            "alpha_2": "CR",
+            "id": 7
+        },
+        "group": "E",
+        "date": "2022-11-27T10:00:00",
+        "id": 25,
+        "home_team": {
+            "name": "Japan",
+            "alpha_3": "JPN",
+            "official_name": "Japan",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#000000",
+                    "#00008B",
+                    "#FFFFFF",
+                    "#E8F48C"
+                ]
+            },
+            "alpha_2": "JP",
+            "id": 16
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "26": {
+        "stadium": {
+            "longitude": 51.48780547,
+            "name": "Al Bayt Stadium",
+            "id": 2,
+            "latitude": 25.6521339
+        },
+        "away_team": {
+            "name": "Germany",
+            "alpha_3": "DEU",
+            "official_name": "Federal Republic of Germany",
+            "colors": {
+                "primary": [
+                    "#000000",
+                    "#FF0000",
+                    "#FFD700"
+                ],
+                "secondary": [
+                    "#FFFFFF",
+                    "#C0C0C0"
+                ]
+            },
+            "alpha_2": "DE",
+            "id": 13
+        },
+        "group": "E",
+        "date": "2022-11-27T19:00:00",
+        "id": 26,
+        "home_team": {
+            "name": "Spain",
+            "alpha_3": "ESP",
+            "official_name": "Kingdom of Spain",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFD700"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "ES",
+            "id": 27
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "27": {
+        "stadium": {
+            "longitude": 51.53224644,
+            "name": "Al Thumama Stadium",
+            "id": 4,
+            "latitude": 25.23520905
+        },
+        "away_team": {
+            "name": "Morocco",
+            "alpha_3": "MAR",
+            "official_name": "Kingdom of Morocco",
+            "colors": {
+                "primary": [
+                    "#C22229",
+                    "#006230"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "MA",
+            "id": 18
+        },
+        "group": "F",
+        "date": "2022-11-27T13:00:00",
+        "id": 27,
+        "home_team": {
+            "name": "Belgium",
+            "alpha_3": "BEL",
+            "official_name": "Kingdom of Belgium",
+            "colors": {
+                "primary": [
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#000000",
+                    "#FFFF00",
+                    "#75AADB"
+                ]
+            },
+            "alpha_2": "BE",
+            "id": 3
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "28": {
+        "stadium": {
+            "longitude": 51.44828648,
+            "name": "Khalifa International Stadium",
+            "id": 6,
+            "latitude": 25.26367575
+        },
+        "away_team": {
+            "name": "Canada",
+            "alpha_3": "CAN",
+            "official_name": "Canada",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#000000"
+                ]
+            },
+            "alpha_2": "CA",
+            "id": 6
+        },
+        "group": "F",
+        "date": "2022-11-27T16:00:00",
+        "id": 28,
+        "home_team": {
+            "name": "Croatia",
+            "alpha_3": "HRV",
+            "official_name": "Republic of Croatia",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF",
+                    "#0000FF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "HR",
+            "id": 8
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "29": {
+        "stadium": {
+            "longitude": 51.5742271,
+            "name": "Al Janoub Stadium",
+            "id": 3,
+            "latitude": 25.15970785
+        },
+        "away_team": {
+            "name": "Serbia",
+            "alpha_3": "SRB",
+            "official_name": "Republic of Serbia",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#0000CC",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "RS",
+            "id": 25
+        },
+        "group": "G",
+        "date": "2022-11-28T10:00:00",
+        "id": 29,
+        "home_team": {
+            "name": "Cameroon",
+            "alpha_3": "CMR",
+            "official_name": "Republic of Cameroon",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FF0000",
+                    "#FFFF00"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "CM",
+            "id": 5
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "30": {
+        "stadium": {
+            "longitude": 51.56639909,
+            "name": "Stadium 974",
+            "id": 8,
+            "latitude": 25.28878815
+        },
+        "away_team": {
+            "name": "Switzerland",
+            "alpha_3": "CHE",
+            "official_name": "Swiss Confederation",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "CH",
+            "id": 28
+        },
+        "group": "G",
+        "date": "2022-11-28T16:00:00",
+        "id": 30,
+        "home_team": {
+            "name": "Brazil",
+            "alpha_3": "BRA",
+            "official_name": "Federative Republic of Brazil",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFFF00"
+                ],
+                "secondary": [
+                    "#0000FF",
+                    "#FFFFFF"
+                ]
+            },
+            "alpha_2": "BR",
+            "id": 4
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "31": {
+        "stadium": {
+            "longitude": 51.42444766,
+            "name": "Education City Stadium",
+            "id": 5,
+            "latitude": 25.31085325
+        },
+        "away_team": {
+            "name": "Ghana",
+            "alpha_3": "GHA",
+            "official_name": "Republic of Ghana",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFF00",
+                    "#008000",
+                    "#000000"
+                ],
+                "secondary": [
+                    "#000000",
+                    "#FFFFFF"
+                ]
+            },
+            "alpha_2": "GH",
+            "id": 14
+        },
+        "group": "H",
+        "date": "2022-11-28T13:00:00",
+        "id": 31,
+        "home_team": {
+            "name": "South Korea",
+            "alpha_3": "KOR",
+            "official_name": "Republic of Korea",
+            "colors": {
+                "primary": [
+                    "#EC0F32",
+                    "#021858",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "KR",
+            "id": 26
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "32": {
+        "stadium": {
+            "longitude": 51.49041242,
+            "name": "Lusail Stadium",
+            "id": 7,
+            "latitude": 25.42079535
+        },
+        "away_team": {
+            "name": "Uruguay",
+            "alpha_3": "URY",
+            "official_name": "Eastern Republic of Uruguay",
+            "colors": {
+                "primary": [
+                    "#0000FF",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#FF0000",
+                    "#75AADB",
+                    "#000000"
+                ]
+            },
+            "alpha_2": "UY",
+            "id": 31
+        },
+        "group": "H",
+        "date": "2022-11-28T19:00:00",
+        "id": 32,
+        "home_team": {
+            "name": "Portugal",
+            "alpha_3": "PRT",
+            "official_name": "Portuguese Republic",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#FFFFFF",
+                    "#0000FF"
+                ]
+            },
+            "alpha_2": "PT",
+            "id": 21
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "33": {
+        "stadium": {
+            "longitude": 51.48780547,
+            "name": "Al Bayt Stadium",
+            "id": 2,
+            "latitude": 25.6521339
+        },
+        "away_team": {
+            "name": "Qatar",
+            "alpha_3": "QAT",
+            "official_name": "State of Qatar",
+            "colors": {
+                "primary": [
+                    "#800000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "QA",
+            "id": 22
+        },
+        "group": "A",
+        "date": "2022-11-29T16:00:00",
+        "id": 33,
+        "home_team": {
+            "name": "Netherlands",
+            "alpha_3": "NLD",
+            "official_name": "Kingdom of the Netherlands",
+            "colors": {
+                "primary": [
+                    "#FF7F00"
+                ],
+                "secondary": [
+                    "#FF0000",
+                    "#FFFFFF",
+                    "#0000FF"
+                ]
+            },
+            "alpha_2": "NL",
+            "id": 19
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "34": {
+        "stadium": {
+            "longitude": 51.44828648,
+            "name": "Khalifa International Stadium",
+            "id": 6,
+            "latitude": 25.26367575
+        },
+        "away_team": {
+            "name": "Senegal",
+            "alpha_3": "SEN",
+            "official_name": "Republic of Senegal",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFFF00",
+                    "#FF0000"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "SN",
+            "id": 24
+        },
+        "group": "A",
+        "date": "2022-11-29T16:00:00",
+        "id": 34,
+        "home_team": {
+            "name": "Ecuador",
+            "alpha_3": "ECU",
+            "official_name": "Republic of Ecuador",
+            "colors": {
+                "primary": [
+                    "#FFFF00",
+                    "#0000FF",
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#93CCEA"
+                ]
+            },
+            "alpha_2": "EC",
+            "id": 10
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "35": {
+        "stadium": {
+            "longitude": 51.53224644,
+            "name": "Al Thumama Stadium",
+            "id": 4,
+            "latitude": 25.23520905
+        },
+        "away_team": {
+            "name": "USA",
+            "alpha_3": "USA",
+            "official_name": "United States of America",
+            "colors": {
+                "primary": [
+                    "#BB2533",
+                    "#1F2742",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "US",
+            "id": 30
+        },
+        "group": "B",
+        "date": "2022-11-29T19:00:00",
+        "id": 35,
+        "home_team": {
+            "name": "Iran",
+            "alpha_3": "IRN",
+            "official_name": "Islamic Republic of Iran",
+            "colors": {
+                "primary": [
+                    "#239F40",
+                    "#DA0000",
+                    "#000000"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "IR",
+            "id": 15
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "36": {
+        "stadium": {
+            "longitude": 51.34232175,
+            "name": "Ahmad Bin Ali Stadium",
+            "id": 1,
+            "latitude": 25.32969165
+        },
+        "away_team": {
+            "name": "England",
+            "alpha_3": "ENG",
+            "official_name": "United Kingdom of Great Britain and Northern Ireland",
+            "colors": {
+                "primary": [
+                    "#EA1F29",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#2B57AC",
+                    "#000040"
+                ]
+            },
+            "alpha_2": "EN",
+            "id": 11
+        },
+        "group": "B",
+        "date": "2022-11-29T19:00:00",
+        "id": 36,
+        "home_team": {
+            "name": "Wales",
+            "alpha_3": "WAL",
+            "official_name": "United Kingdom of Great Britain and Northern Ireland",
+            "colors": {
+                "primary": [
+                    "#174A3F",
+                    "#AE2630",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#CF1E26"
+                ]
+            },
+            "alpha_2": "WL",
+            "id": 32
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "37": {
+        "stadium": {
+            "longitude": 51.56639909,
+            "name": "Stadium 974",
+            "id": 8,
+            "latitude": 25.28878815
+        },
+        "away_team": {
+            "name": "Argentina",
+            "alpha_3": "ARG",
+            "official_name": "Argentine Republic",
+            "colors": {
+                "primary": [
+                    "#75AADB",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#006A93",
+                    "#000000"
+                ]
+            },
+            "alpha_2": "AR",
+            "id": 1
+        },
+        "group": "C",
+        "date": "2022-11-30T19:00:00",
+        "id": 37,
+        "home_team": {
+            "name": "Poland",
+            "alpha_3": "POL",
+            "official_name": "Republic of Poland",
+            "colors": {
+                "primary": [
+                    "#FFFFFF",
+                    "#FF0000"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "PL",
+            "id": 20
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "38": {
+        "stadium": {
+            "longitude": 51.49041242,
+            "name": "Lusail Stadium",
+            "id": 7,
+            "latitude": 25.42079535
+        },
+        "away_team": {
+            "name": "Mexico",
+            "alpha_3": "MEX",
+            "official_name": "United Mexican States",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFFFFF",
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#000000",
+                    "#B94E48",
+                    "#F653A6",
+                    "#CCFF00"
+                ]
+            },
+            "alpha_2": "MX",
+            "id": 17
+        },
+        "group": "C",
+        "date": "2022-11-30T19:00:00",
+        "id": 38,
+        "home_team": {
+            "name": "Saudi Arabia",
+            "alpha_3": "SAU",
+            "official_name": "Kingdom of Saudi Arabia",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "SA",
+            "id": 23
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "39": {
+        "stadium": {
+            "longitude": 51.5742271,
+            "name": "Al Janoub Stadium",
+            "id": 3,
+            "latitude": 25.15970785
+        },
+        "away_team": {
+            "name": "Denmark",
+            "alpha_3": "DNK",
+            "official_name": "Kingdom of Denmark",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "DK",
+            "id": 9
+        },
+        "group": "D",
+        "date": "2022-11-30T16:00:00",
+        "id": 39,
+        "home_team": {
+            "name": "Australia",
+            "alpha_3": "AUS",
+            "official_name": "Australia",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFD700"
+                ],
+                "secondary": [
+                    "#00008B",
+                    "#FFFFFF"
+                ]
+            },
+            "alpha_2": "AU",
+            "id": 2
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "40": {
+        "stadium": {
+            "longitude": 51.42444766,
+            "name": "Education City Stadium",
+            "id": 5,
+            "latitude": 25.31085325
+        },
+        "away_team": {
+            "name": "France",
+            "alpha_3": "FRA",
+            "official_name": "French Republic",
+            "colors": {
+                "primary": [
+                    "#0000FF",
+                    "#FFFFFF",
+                    "#FF0000"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "FR",
+            "id": 12
+        },
+        "group": "D",
+        "date": "2022-11-30T16:00:00",
+        "id": 40,
+        "home_team": {
+            "name": "Tunisia",
+            "alpha_3": "TUN",
+            "official_name": "Republic of Tunisia",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "TN",
+            "id": 29
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "41": {
+        "stadium": {
+            "longitude": 51.44828648,
+            "name": "Khalifa International Stadium",
+            "id": 6,
+            "latitude": 25.26367575
+        },
+        "away_team": {
+            "name": "Spain",
+            "alpha_3": "ESP",
+            "official_name": "Kingdom of Spain",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFD700"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "ES",
+            "id": 27
+        },
+        "group": "E",
+        "date": "2022-12-01T19:00:00",
+        "id": 41,
+        "home_team": {
+            "name": "Japan",
+            "alpha_3": "JPN",
+            "official_name": "Japan",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#000000",
+                    "#00008B",
+                    "#FFFFFF",
+                    "#E8F48C"
+                ]
+            },
+            "alpha_2": "JP",
+            "id": 16
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "42": {
+        "stadium": {
+            "longitude": 51.48780547,
+            "name": "Al Bayt Stadium",
+            "id": 2,
+            "latitude": 25.6521339
+        },
+        "away_team": {
+            "name": "Germany",
+            "alpha_3": "DEU",
+            "official_name": "Federal Republic of Germany",
+            "colors": {
+                "primary": [
+                    "#000000",
+                    "#FF0000",
+                    "#FFD700"
+                ],
+                "secondary": [
+                    "#FFFFFF",
+                    "#C0C0C0"
+                ]
+            },
+            "alpha_2": "DE",
+            "id": 13
+        },
+        "group": "E",
+        "date": "2022-12-01T19:00:00",
+        "id": 42,
+        "home_team": {
+            "name": "Costa Rica",
+            "alpha_3": "CRI",
+            "official_name": "Republic of Costa Rica",
+            "colors": {
+                "primary": [
+                    "#0000FF",
+                    "#FFFFFF",
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#000000"
+                ]
+            },
+            "alpha_2": "CR",
+            "id": 7
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "43": {
+        "stadium": {
+            "longitude": 51.34232175,
+            "name": "Ahmad Bin Ali Stadium",
+            "id": 1,
+            "latitude": 25.32969165
+        },
+        "away_team": {
+            "name": "Belgium",
+            "alpha_3": "BEL",
+            "official_name": "Kingdom of Belgium",
+            "colors": {
+                "primary": [
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#000000",
+                    "#FFFF00",
+                    "#75AADB"
+                ]
+            },
+            "alpha_2": "BE",
+            "id": 3
+        },
+        "group": "F",
+        "date": "2022-12-01T16:00:00",
+        "id": 43,
+        "home_team": {
+            "name": "Croatia",
+            "alpha_3": "HRV",
+            "official_name": "Republic of Croatia",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF",
+                    "#0000FF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "HR",
+            "id": 8
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "44": {
+        "stadium": {
+            "longitude": 51.53224644,
+            "name": "Al Thumama Stadium",
+            "id": 4,
+            "latitude": 25.23520905
+        },
+        "away_team": {
+            "name": "Morocco",
+            "alpha_3": "MAR",
+            "official_name": "Kingdom of Morocco",
+            "colors": {
+                "primary": [
+                    "#C22229",
+                    "#006230"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "MA",
+            "id": 18
+        },
+        "group": "F",
+        "date": "2022-12-01T16:00:00",
+        "id": 44,
+        "home_team": {
+            "name": "Canada",
+            "alpha_3": "CAN",
+            "official_name": "Canada",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#000000"
+                ]
+            },
+            "alpha_2": "CA",
+            "id": 6
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "45": {
+        "stadium": {
+            "longitude": 51.56639909,
+            "name": "Stadium 974",
+            "id": 8,
+            "latitude": 25.28878815
+        },
+        "away_team": {
+            "name": "Switzerland",
+            "alpha_3": "CHE",
+            "official_name": "Swiss Confederation",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "CH",
+            "id": 28
+        },
+        "group": "G",
+        "date": "2022-12-02T19:00:00",
+        "id": 45,
+        "home_team": {
+            "name": "Serbia",
+            "alpha_3": "SRB",
+            "official_name": "Republic of Serbia",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#0000CC",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "RS",
+            "id": 25
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "46": {
+        "stadium": {
+            "longitude": 51.49041242,
+            "name": "Lusail Stadium",
+            "id": 7,
+            "latitude": 25.42079535
+        },
+        "away_team": {
+            "name": "Brazil",
+            "alpha_3": "BRA",
+            "official_name": "Federative Republic of Brazil",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FFFF00"
+                ],
+                "secondary": [
+                    "#0000FF",
+                    "#FFFFFF"
+                ]
+            },
+            "alpha_2": "BR",
+            "id": 4
+        },
+        "group": "G",
+        "date": "2022-12-02T19:00:00",
+        "id": 46,
+        "home_team": {
+            "name": "Cameroon",
+            "alpha_3": "CMR",
+            "official_name": "Republic of Cameroon",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FF0000",
+                    "#FFFF00"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "CM",
+            "id": 5
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "47": {
+        "stadium": {
+            "longitude": 51.5742271,
+            "name": "Al Janoub Stadium",
+            "id": 3,
+            "latitude": 25.15970785
+        },
+        "away_team": {
+            "name": "Uruguay",
+            "alpha_3": "URY",
+            "official_name": "Eastern Republic of Uruguay",
+            "colors": {
+                "primary": [
+                    "#0000FF",
+                    "#FFFFFF"
+                ],
+                "secondary": [
+                    "#FF0000",
+                    "#75AADB",
+                    "#000000"
+                ]
+            },
+            "alpha_2": "UY",
+            "id": 31
+        },
+        "group": "H",
+        "date": "2022-12-02T16:00:00",
+        "id": 47,
+        "home_team": {
+            "name": "Ghana",
+            "alpha_3": "GHA",
+            "official_name": "Republic of Ghana",
+            "colors": {
+                "primary": [
+                    "#FF0000",
+                    "#FFFF00",
+                    "#008000",
+                    "#000000"
+                ],
+                "secondary": [
+                    "#000000",
+                    "#FFFFFF"
+                ]
+            },
+            "alpha_2": "GH",
+            "id": 14
+        },
+        "score_home": null,
+        "score_away": null
+    },
+    "48": {
+        "stadium": {
+            "longitude": 51.42444766,
+            "name": "Education City Stadium",
+            "id": 5,
+            "latitude": 25.31085325
+        },
+        "away_team": {
+            "name": "Portugal",
+            "alpha_3": "PRT",
+            "official_name": "Portuguese Republic",
+            "colors": {
+                "primary": [
+                    "#008000",
+                    "#FF0000"
+                ],
+                "secondary": [
+                    "#FFFFFF",
+                    "#0000FF"
+                ]
+            },
+            "alpha_2": "PT",
+            "id": 21
+        },
+        "group": "H",
+        "date": "2022-12-02T16:00:00",
+        "id": 48,
+        "home_team": {
+            "name": "South Korea",
+            "alpha_3": "KOR",
+            "official_name": "Republic of Korea",
+            "colors": {
+                "primary": [
+                    "#EC0F32",
+                    "#021858",
+                    "#FFFFFF"
+                ],
+                "secondary": []
+            },
+            "alpha_2": "KR",
+            "id": 26
+        }
+    }
+}
+
+
