@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+{% block title %}Create Bracket{% endblock title %}
+{% block head %}
+<!-- any excess styling goes here -->
+{{super()}}
+<link href="{{ url_for('static', filename='bracket.css') }}" rel="stylesheet">
+<!-- <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/draggable.bundle.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/isEqual.min.js"></script> -->
+<!-- <script src="{{url_for('static', filename='lodash.js')}}"></script> -->
+<script>
+    window.addEventListener("DOMContentLoaded", (event) => {
+        
+        // let initialDropzone = null;
+        // let clonedNode = null;
+
+        // function dragStart(e) {
+        //     // Record the initial dropzone because we want to use it in droppable:dropped.
+        //     initialDropzone = e.data.dropzone;
+
+        //     // Clone the source node and insert after the original node. Adding a class for
+        //     // some styling.
+        //     const originalNode = e.data.dragEvent.data.source;
+        //     // originalNode.style.display = "none";
+        //     clonedNode = originalNode.cloneNode(true);
+        //     clonedNode.classList.add("draggable-clone");
+        //     originalNode.parentNode.insertBefore(clonedNode, originalNode.nextSibling);
+        // }
+
+        // function dragDropped(e) {
+        //     if (!clonedNode) return;
+
+        //     // If the current dropzone is our initial one, then hide the cloned Node
+        //     // because otherwise you have the cloned node plus the dropped node.
+        //     const dropzone = e.data.dropzone;
+        //     console.log(dropzone)
+        //     console.log(e.data.dropzone)
+        //     console.log(initialDropzone)
+        //     console.log(_.isEqual(initialDropzone, e.data.dropzone))
+            
+        //     if (_.isEqual(initialDropzone, dropzone)) {
+        //         clonedNode.style.display = "none";
+        //         console.log("here")
+        //     }
+        //     else clonedNode.style.display = "inherit";
+        // }
+        // function dragStopped(e) {
+        //     e.cancel()
+        // }
+
+        // // const droppable = new Droppable({});
+        // const droppable = new Draggable.Droppable(document.querySelectorAll('.containers'), {
+        //     draggable: '.item',
+        //     dropzone: '.dropzone',
+        //     mirror: {
+        //         constrainDimensions: true, //prevent element from shrinking while being dragged
+        //     }
+
+        // })
+
+        // droppable.on("droppable:start", dragStart);
+        // droppable.on("droppable:dropped", dragDropped);
+        // droppable.on("droppable:out", (evt) => {
+        //     evt.cancel()
+        // })
+        // droppable.on("drag:stop", dragStopped)
+        // var start;
+        // var end;
+        // droppable.on("drag:start", (evt) => {
+        //     // evt.originalSource.style = ""
+        //     console.log(evt)
+        //     console.log("FROM START")
+        //     console.log("original source")
+        //     start = evt.data.originalSource
+        //     console.log(evt.data.originalSource)
+        //     console.log("source")
+        //     console.log(evt.source)
+        //     console.log("mirror")
+        //     console.log(evt.mirror)
+        // })
+
+        // droppable.on("droppable:dropped", (evt) => {
+        //     // evt.originalSource = start
+        //     // evt.source = start
+        //     console.log(evt)
+        //     console.log("FROM DRAGGABLE DROPPED")
+        //     console.log(evt.data.dropzone)
+        //     end = evt.data.dropzone
+        //     evt.cancel()
+
+        // })
+        // droppable.on("drag:stop", (evt) => {
+        //     console.log("END START")
+        //     console.log(end)
+        //     console.log(start)
+        //     end = start
+        //     console.log(end)
+        //     console.log(start)
+        // })
+
+        // var lastOver;
+        // droppable.on('drag:start', (evt) => {
+        //     this.lastOver = null;
+        //     let droppableItem;
+        //     droppableItem = evt.data.originalSource;
+        // });
+
+        // droppable.on('droppable:dropped', (evt) => {
+        //                 this.lastOver = evt.data.dropzone;
+        //                 console.log(this.lastOver)
+        //                 evt.cancel();
+        //             });
+
+        // droppable.on('drag:stop', (evt) => {
+        //     console.log("please work")
+        //     let droppableItem;
+        //     let droppedInto;
+        //     droppableItem = evt.data.originalSource;
+        //     droppedInto = this.lastOver;
+        // });
+
+    })
+</script>
+<style>
+    /* .draggable-dropzone--occupied { background: lightgreen; } */
+</style>
+{% endblock head %}
+{% block main %}
+<h1>2013 NCAA Tournament - Midwest Bracket</h1>
+<!-- <div class="teams">
+    <div class="containers">
+        {% for team in teams %}
+        <div class="dropzone draggable-dropzone--occupied">
+            <div class="item">{{team}}</div>
+        </div>
+        {% endfor %}
+    </div>
+</div> -->
+
+<main id="tournament" class="containers">
+    <!-- <div class="containers"> -->
+
+    <ul class="left round round-1">
+      
+          <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <li class="spacer">&nbsp;</li>
+
+            <li class="game game-top ">
+                <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="option1" autocomplete="off"> Lousville
+                </label>
+            </li>
+            <li class="game game-bottom ">
+                <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2" autocomplete="off"> NC A&T
+            </label></li>
+    
+            <li class="spacer">&nbsp;</li>
+            
+          </div> -->
+          <li class="spacer">&nbsp;</li>
+          <li class="game game-top ">Lousville</li>
+          <!-- <li class="game game-spacer">&nbsp;</li> -->
+          <li class="game game-bottom ">NC A&T</li>
+
+          <li class="spacer">&nbsp;</li>
+        <li class="game game-top ">Colo St </li>
+        <!-- <li class="game game-spacer">&nbsp;</li> -->
+        <li class="game game-bottom ">Missouri </li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">Oklahoma St </li>
+        <!-- <li class="game game-spacer">&nbsp;</li> -->
+        <li class="game game-bottom ">Oregon </li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">Saint Louis </li>
+        <!-- <li class="game game-spacer">&nbsp;</li> -->
+        <li class="game game-bottom ">New Mexico St </li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">Memphis </li>
+        <!-- <li class="game game-spacer">&nbsp;</li> -->
+        <li class="game game-bottom ">St Mary's </li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">Mich St </li>
+        <!-- <li class="game game-spacer">&nbsp;</li> -->
+        <li class="game game-bottom ">Valparaiso </li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">Creighton </li>
+        <!-- <li class="game game-spacer">&nbsp;</li> -->
+        <li class="game game-bottom ">Cincinnati </li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">Duke </li>
+        <!-- <li class="game game-spacer">&nbsp;</li> -->
+        <li class="game game-bottom ">Albany </li>
+
+        <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-2">
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top">
+            <div class="dropzone"></div>
+        </li>
+        <!-- <li class="game game-spacer"></li> -->
+        <li class="game game-bottom">
+            <div class="dropzone"></div>
+        </li>
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top">Oregon </li>
+        <!-- <li class="game game-spacer">&nbsp;</li> -->
+        <li class="game game-bottom ">Saint Louis </li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">Memphis </li>
+        <!-- <li class="game game-spacer">&nbsp;</li> -->
+        <li class="game game-bottom ">Mich St <span>70</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">Creighton <span>50</span></li>
+        <!-- <li class="game game-spacer">&nbsp;</li> -->
+        <li class="game game-bottom ">Duke </li>
+
+        <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-3">
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">Lousville </li>
+        <!-- <li class="game game-spacer">&nbsp;</li> -->
+        <li class="game game-bottom ">Oregon </li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">Mich St </li>
+        <!-- <li class="game game-spacer">&nbsp;</li> -->
+        <li class="game game-bottom ">Duke </li>
+
+        <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-4">
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">Lousville </li>
+        <!-- <li class="game game-spacer">&nbsp;</li> -->
+        <li class="game game-bottom ">Duke </li>
+
+        <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-5">
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top ">Lousville </li>
+        <!-- <li class="game game-spacer">&nbsp;</li>  -->
+        <li class="spacer">&nbsp;</li>
+    </ul>
+    <!-- </div> -->
+
+</main>
+{% endblock main %}
