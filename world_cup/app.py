@@ -24,6 +24,7 @@ sys.path.append(scriptdir)
 # Import from local package files
 from hashing_examples import UpdatedHasher
 from loginforms import RegisterForm, LoginForm
+from worldcup_dataloader import matches
 
 ###############################################################################
 # Basic Configuration
@@ -168,7 +169,7 @@ def post_login():
 
 @app.get('/')
 def index():
-    return render_template('schedule.html', current_user=current_user)
+    return render_template('schedule.html', current_user=current_user, matches=matches)
 
 @app.get('/logout/')
 @login_required
