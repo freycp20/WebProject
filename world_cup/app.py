@@ -100,11 +100,13 @@ with app.app_context():
 # Route Handlers
 ###############################################################################
 @app.get('/create-bracket/')
+@login_required
 def get_create_bracket():
-    teams = ["Lousville", "Colo St", "NC A&T"]
+    teams = [("Louisville", "NC A&T"), ("Colo St. Missouri"), ("")]
     return render_template('create_bracket.html', current_user=current_user, teams=teams)
 
 @app.post('/create-bracket')
+@login_required
 def post_create_bracket():
     pass
 
