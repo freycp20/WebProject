@@ -28,6 +28,8 @@
             <td>{{match.stadium.name}}</td>
             {% if match.home_score and match.away_score %}
                 <td>Score: {{match.home_score}} - {{match.away_score}}</td>
+            {% else %}
+                <td>Score: None</td>
             {% endif %}
         </tr>
         {% endfor %}
