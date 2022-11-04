@@ -100,6 +100,15 @@ with app.app_context():
 ###############################################################################
 # Route Handlers
 ###############################################################################
+@app.get('/create-bracket/')
+def get_create_bracket():
+    teams = ["Lousville", "Colo St", "NC A&T"]
+    return render_template('create_bracket.html', current_user=current_user, teams=teams)
+
+@app.post('/create-bracket')
+def post_create_bracket():
+    pass
+
 
 @app.get('/register/')
 def get_register():
@@ -160,7 +169,7 @@ def post_login():
 
 @app.get('/')
 def index():
-    return render_template('home.html', current_user=current_user, matches=matches)
+    return render_template('schedule.html', current_user=current_user)
 
 @app.get('/logout/')
 @login_required
