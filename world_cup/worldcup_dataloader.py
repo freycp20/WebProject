@@ -1,7 +1,7 @@
 import os
 import json
 from datetime import datetime
-from marshmallow import Schema, fields, validate, post_load
+from marshmallow import Schema, fields, validate, post_loadc
 
 # define a simple Python class representing a Stadium
 class Stadium(object):

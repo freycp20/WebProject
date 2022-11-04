@@ -169,7 +169,7 @@ def post_login():
 
 @app.get('/')
 def index():
-    return render_template('schedule.html', current_user=current_user)
+    return render_template('schedule.html', current_user=current_user, matches=matches)
 
 @app.get('/logout/')
 @login_required
