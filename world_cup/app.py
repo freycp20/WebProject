@@ -134,10 +134,30 @@ def get_create_bracket():
     teams = ["Lousville", "Colo St", "NC A&T"]
     return render_template('create_bracket.html', current_user=current_user, teams=teams)
 
-@app.post('/create-bracket')
+@app.post('/create-bracket/')
 def post_create_bracket():
     pass
 
+@app.get('/view-bracket/')
+@login_required
+def get_view_bracket():
+    return render_template("view_bracket.html", current_user=current_user)
+
+
+@app.get('/input-scores/')
+@login_required
+def get_input_scores():
+    # TODO: make the form and put it here, then pass it into the render_template
+    return render_template("input_scores.html", current_user=current_user, matches=matches)
+    
+
+@app.post('/input-scores/')
+@login_required
+def post_input_scores():
+    # TODO: here as well, put the form and validate to make sure that the form has valid data.
+    # @emily you can do your javascript things with the forms to make all of that work. Ill have 
+    # the default template with the games and then you can put in the stuff with the buttons and inputs
+    return render_template("input_scores.html", current_user=current_user, )
 
 @app.get('/register/')
 def get_register():
