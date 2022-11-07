@@ -52,7 +52,7 @@
           <li><a href="{{url_for('get_create_bracket')}}" class="nav-link px-2 link-dark">Create Bracket</a></li>
           <li><a href="#" class="nav-link px-2 link-dark">View Brackets</a></li>
             {% if current_user.admin_status %}
-            <li><a href="#" class="nav-link px-2 link-dark">Input Scores</a></li>
+            <li><a href="{{url_for('get_input_scores')}}" class="nav-link px-2 link-dark">Input Scores</a></li>
             {% endif %}
           {% endif %}
         </ul>

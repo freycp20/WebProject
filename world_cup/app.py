@@ -96,10 +96,39 @@ with app.app_context():
     # db.drop_all()
     db.create_all() # this is only needed if the database doesn't already exist
 
+from scores_form import ScoresForm
 
 ###############################################################################
 # Route Handlers
 ###############################################################################
+@app.get('/input-scores/')
+def get_input_scores():
+    form = ScoresForm()
+    return render_template("input_scores.html", form=form, matches=matches)
+
+@app.post('/input-scores/')
+def post_input_scores():
+    form = ScoresForm()
+    if form.validate():
+        # form data is valid, add it to authors and redirect
+        # TODO add the scores to the database
+        # for match in matches:
+        #     if match.id == form.id:
+        #         match.score_home = form.data.homeScore
+        #         match.score_away = form.data.awayScore
+        #         break
+
+        flash(f"Score was updated successfully!")
+        return redirect(url_for('get_input_scores'))
+    else:
+        # flash an error messages for all errors
+        for field, error in form.errors.items():
+            flash(f"Error! {' '.join(error)}")
+
+        # reload new form
+        return redirect(url_for('get_input_scores'))
+
+
 @app.get('/create-bracket/')
 def get_create_bracket():
     teams = ["Lousville", "Colo St", "NC A&T"]
