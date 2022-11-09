@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %} Schedule {% endblock title %}
+{%  block head %}
+{{super()}}
+<!-- PUT EXTRA HEAD CONTENT HERE -->
+{% endblock head %}
+{% block main %} 
+<!-- PUT MAIN CONTENT HERE -->
+{% if current_user.admin_status %}            
+<h1>
+    INPUT SCORES PAGE
+</h1>
+
+<table class="table table-hover" id="match-list">
+    <thead>
+        <tr>
+        <th>Date</th>
+        <th>Home Team</th>
+        <th>Away Team</th>
+        <th>Stadium</th>
+        <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for match in matches %}
+        <tr>
+            <td class="text-center align-middle">{{match.date.strftime("%a %b %d %I:%M %p")}}</td>
+            <td><img src="/static/flags/{{match.home_team.alpha_2}}.gif" alt="Home Flag" class="rounded m-3" width="50" />{{match.home_team.name}}</td>
+            <td class="text-end">{{match.away_team.name}}<img src="/static/flags/{{match.away_team.alpha_2}}.gif" alt="Away Flag" class="rounded m-3" width="50"/></td>
+            <td class="text-center align-middle">{{match.stadium.name}}</td>
+            {% if match.score_home and match.score_away %}
+                <td>Existing Score: {{match.score_home}} - {{match.score_away}}</td>
+            {% else %}
+                <td>Existing Score: None</td>
+            {% endif %}
+            <td>
+                <form id="match-form" action="/input-scores/" method="post">
+                {# add csrf protection #}
+                {{ form.match_id(value=match.id) }}
+                {{ form.hidden_tag() }}
+        
+                {# add field and label #}
+                {{ form.homeScore.label }}
+                {{ form.homeScore() }}
+        
+                {{ form.awayScore.label }}
+                {{ form.awayScore() }}
+                
+                {# add submit button #}
+                {{ form.submit() }}
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %} 
+<h2>Sorry... You do not have access to this page</h2>
+<span>
+    If you think this is a mistake, please contact our <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">support team!</a>
+</span>
+
+{% endif %}
+{% endblock main %}
