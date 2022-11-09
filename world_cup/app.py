@@ -24,7 +24,6 @@ sys.path.append(scriptdir)
 # Import from local package files
 from hashing_examples import UpdatedHasher
 from loginforms import RegisterForm, LoginForm
-from worldcup_dataloader import matches
 
 ###############################################################################
 # Basic Configuration
@@ -70,6 +69,7 @@ class User(UserMixin, db.Model):
     email = db.Column(db.Unicode, nullable=False)
     password_hash = db.Column(db.LargeBinary) # hash is a binary attribute
     admin_status = db.Column(db.Integer)
+    score = db.Column(db.Integer)
     # make a write-only password property that just updates the stored hash
     @property
     def password(self):
@@ -92,14 +92,99 @@ class User(UserMixin, db.Model):
     # add a verify_password convenience method
     def verify_password(self, pwd):
         return pwd_hasher.check(pwd, self.password_hash)
+
+# Define the game data
+class Stadium(db.Model):
+    __tablename__ = 'Stadiums'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Unicode, nullable=False)
+    latitude = db.Column(db.Float, nullable=False)
+    longitude = db.Column(db.Float, nullable=False)
+    matches = db.relationship('Match', backref='stadiumObj')
+    # Stadium is a foreign key in another table
+    
+    def __str__(self):
+        return f"Stadium({self.id})"
+    def __repr__(self):
+        return f"Stadium({self.id})"
+
+class Team(db.Model):
+    __tablename__ = 'Teams'
+    id = id = db.Column(db.Integer, primary_key=True)
+    alpha_2 = db.Column(db.Unicode, nullable=False)
+    alpha_3 = db.Column(db.Unicode, nullable=False)
+    name = db.Column(db.Unicode, nullable=False)
+    official_name = db.Column(db.Unicode, nullable=False)
+    primary_colors = db.Column(db.Unicode, nullable=False)
+    secondary_colors = db.Column(db.Unicode, nullable=False)
+    home_team = db.relationship('Match', backref='home_team', foreign_keys="Match.home_id")
+    away_team = db.relationship('Match', backref='away_team', foreign_keys="Match.away_id")
+    # Team is a foreign key in another table
+    
+    def __str__(self):
+        return f"Team({self.id})"
+    def __repr__(self):
+        return f"Team({self.id})"
+
+class Match(db.Model):
+    __tablename__ = 'Matches'
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.Date, nullable=False)
+    group = db.Column(db.Unicode, nullable=False)
+    # Stadium and teams are other tables
+    stadium = db.Column(db.Integer, db.ForeignKey("Stadiums.id"))
+    home_id = db.Column(db.Integer, db.ForeignKey("Teams.id"))
+    away_id = db.Column(db.Integer, db.ForeignKey("Teams.id"))
+    score_home = db.Column(db.Integer, nullable=True)
+    score_away = db.Column(db.Integer, nullable=True)
+    
+    def __str__(self):
+        return f"Match({self.home_id} vs {self.away_id})"
+    def __repr__(self):
+        return f"Match({self.id})"
+
 with app.app_context():
     # db.drop_all()
     db.create_all() # this is only needed if the database doesn't already exist
 
+from scores_form import ScoresForm
 
 ###############################################################################
 # Route Handlers
 ###############################################################################
+@app.get('/input-scores/')
+def get_input_scores():
+    form = ScoresForm()
+    matches = Match.query.all()
+    return render_template("input_scores.html", form=form, matches=matches, current_user=current_user)
+
+@app.post('/input-scores/')
+def post_input_scores():
+    form = ScoresForm()
+    if form.validate():
+        # form data is valid, add it to authors and redirect
+        match = db.session.query(Match).filter_by(id=int(form.match_id.data)).first()
+        try:
+            match.score_home = form.homeScore.data
+            match.score_away = form.awayScore.data
+            db.session.add(match)
+            db.session.commit()
+        except:
+            flash(f"Score could not be input!")
+            # reload new form
+            return redirect(url_for('get_input_scores'))
+
+        flash(f"Score was updated successfully!")
+        return redirect(url_for('get_input_scores'))
+    else:
+        # flash an error messages for all errors
+        for field, error in form.errors.items():
+            flash(f"Error! {' '.join(error)}")
+
+        # reload new form
+        return redirect(url_for('get_input_scores'))
+
+
 @app.get('/create-bracket/')
 def get_create_bracket():
     teams = ["Lousville", "Colo St", "NC A&T"]
@@ -113,22 +198,6 @@ def post_create_bracket():
 @login_required
 def get_view_bracket():
     return render_template("view_bracket.html", current_user=current_user)
-
-
-@app.get('/input-scores/')
-@login_required
-def get_input_scores():
-    # TODO: make the form and put it here, then pass it into the render_template
-    return render_template("input_scores.html", current_user=current_user, matches=matches)
-    
-
-@app.post('/input-scores/')
-@login_required
-def post_input_scores():
-    # TODO: here as well, put the form and validate to make sure that the form has valid data.
-    # @emily you can do your javascript things with the forms to make all of that work. Ill have 
-    # the default template with the games and then you can put in the stuff with the buttons and inputs
-    return render_template("input_scores.html", current_user=current_user, )
 
 @app.get('/register/')
 def get_register():
@@ -189,7 +258,9 @@ def post_login():
 
 @app.get('/')
 def index():
-    return render_template('schedule.html', current_user=current_user, matches=matches)
+    matches = Match.query.all()
+    teams = Team.query.all()
+    return render_template('schedule.html', current_user=current_user, matches=matches, teams=teams)
 
 @app.get('/logout/')
 @login_required
