@@ -69,6 +69,7 @@ class User(UserMixin, db.Model):
     email = db.Column(db.Unicode, nullable=False)
     password_hash = db.Column(db.LargeBinary) # hash is a binary attribute
     admin_status = db.Column(db.Integer)
+    score = db.Column(db.Integer)
     # make a write-only password property that just updates the stored hash
     @property
     def password(self):
@@ -99,10 +100,12 @@ class Stadium(db.Model):
     name = db.Column(db.Unicode, nullable=False)
     latitude = db.Column(db.Float, nullable=False)
     longitude = db.Column(db.Float, nullable=False)
-    #matches = db.relationship('Match', backref='stadium')
+    matches = db.relationship('Match', backref='stadiumObj')
     # Stadium is a foreign key in another table
     
     def __str__(self):
+        return f"Stadium({self.id})"
+    def __repr__(self):
         return f"Stadium({self.id})"
 
 class Team(db.Model):
@@ -114,10 +117,13 @@ class Team(db.Model):
     official_name = db.Column(db.Unicode, nullable=False)
     primary_colors = db.Column(db.Unicode, nullable=False)
     secondary_colors = db.Column(db.Unicode, nullable=False)
-    #matches = db.relationship('Match', backref='team')
+    home_team = db.relationship('Match', backref='home_team', foreign_keys="Match.home_id")
+    away_team = db.relationship('Match', backref='away_team', foreign_keys="Match.away_id")
     # Team is a foreign key in another table
     
     def __str__(self):
+        return f"Team({self.id})"
+    def __repr__(self):
         return f"Team({self.id})"
 
 class Match(db.Model):
@@ -133,7 +139,9 @@ class Match(db.Model):
     score_away = db.Column(db.Integer, nullable=True)
     
     def __str__(self):
-        return f"Match({self.home_team.name} vs {self.away_team.name})"
+        return f"Match({self.home_id} vs {self.away_id})"
+    def __repr__(self):
+        return f"Match({self.id})"
 
 with app.app_context():
     # db.drop_all()

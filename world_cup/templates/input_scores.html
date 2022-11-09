@@ -25,8 +25,8 @@
         {% for match in matches %}
         <tr>
             <td class="text-center align-middle">{{match.date.strftime("%a %b %d %I:%M %p")}}</td>
-            <td><img src="/static/flags/{{match.home_id.alpha_2}}.gif" alt="Home Flag" class="rounded m-3" width="50" />{{match.home_id.name}}</td>
-            <td class="text-end">{{match.away_id.name}}<img src="/static/flags/{{match.away_id.alpha_2}}.gif" alt="Away Flag" class="rounded m-3" width="50"/></td>
+            <td><img src="/static/flags/{{match.home_team.alpha_2}}.gif" alt="Home Flag" class="rounded m-3" width="50" />{{match.home_team.name}}</td>
+            <td class="text-end">{{match.away_team.name}}<img src="/static/flags/{{match.away_team.alpha_2}}.gif" alt="Away Flag" class="rounded m-3" width="50"/></td>
             <td class="text-center align-middle">{{match.stadium.name}}</td>
             {% if match.score_home and match.score_away %}
                 <td>Existing Score: {{match.score_home}} - {{match.score_away}}</td>
