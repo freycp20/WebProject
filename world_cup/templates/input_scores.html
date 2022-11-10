@@ -28,7 +28,7 @@
             <td><img src="/static/flags/{{match.home_team.alpha_2}}.gif" alt="Home Flag" class="rounded m-3" width="50" />{{match.home_team.name}}</td>
             <td class="text-end">{{match.away_team.name}}<img src="/static/flags/{{match.away_team.alpha_2}}.gif" alt="Away Flag" class="rounded m-3" width="50"/></td>
             <td class="text-center align-middle">{{match.stadium.name}}</td>
-            {% if match.score_home and match.score_away %}
+            {% if (match.score_home and match.score_away) or (match.score_home == 0 or match.score_away == 0) %}
                 <td>Existing Score: {{match.score_home}} - {{match.score_away}}</td>
             {% else %}
                 <td>Existing Score: None</td>
