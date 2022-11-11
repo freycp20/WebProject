@@ -13,6 +13,23 @@
 
 <!-- THIS IS WHERE ALL YOUR MATCH STUFF GOES MANNY -->
 
+<div>
+    <a href="{{url_for('get_matches')}}">back to all games</a>
+        <!-- upcoming match or match history -->
+</div>
+<div>
+    <!-- {{match.hometeam.flag}} -->
+    {{match.hometeam.name}}
+    <p>VS</p>
+    {{match.awayteam.name}}
+    <!-- {{match.awayteam.flag}} -->
+</div>
+<div>
+    {{match.date.strftime("%a %b %d %I:%M %p")}}
+</div>
+<!-- TODO: Stadium and weather -->
+<!--        <td><img src="/static/flags/{{match.home_team.alpha_2}}.gif" alt="{{match.home_team.name}} flag"/>{{match.home_team.name}}</td>
+            <td>{{match.away_team.name}}<img src="/static/flags/{{match.away_team.alpha_2}}.gif" alt="{{match.away_team.name}} flag"/></td> -->
 
 <!-- DO NOT EDIT BELOW THIS LINE -->
 {% endblock main %}
