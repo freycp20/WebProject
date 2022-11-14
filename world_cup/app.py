@@ -272,9 +272,19 @@ def index():
     teams = Team.query.all()
     return render_template('schedule.html', current_user=current_user, matches=matches, teams=teams)
 
+@app.get('/match/')
+def get_matches():
+    # match.home_team-match.away_team
+    #senegal-netherlands
+    #/match/senegal-netherlands/
+    match = Match.query.first()
+    return render_template("match.html", match=match, current_user=current_user)
+
 @app.get('/logout/')
 @login_required
 def get_logout():
     logout_user()
     flash('You have been logged out')
     return redirect(url_for('index'))
+
+
