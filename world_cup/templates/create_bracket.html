@@ -6,126 +6,12 @@
 <link href="{{ url_for('static', filename='bracket.css') }}" rel="stylesheet">
 <!-- <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/draggable.bundle.js"></script> -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/isEqual.min.js"></script> -->
-<!-- <script src="{{url_for('static', filename='lodash.js')}}"></script> -->
-<script>
-    window.addEventListener("DOMContentLoaded", (event) => {
-        
-        // let initialDropzone = null;
-        // let clonedNode = null;
-
-        // function dragStart(e) {
-        //     // Record the initial dropzone because we want to use it in droppable:dropped.
-        //     initialDropzone = e.data.dropzone;
-
-        //     // Clone the source node and insert after the original node. Adding a class for
-        //     // some styling.
-        //     const originalNode = e.data.dragEvent.data.source;
-        //     // originalNode.style.display = "none";
-        //     clonedNode = originalNode.cloneNode(true);
-        //     clonedNode.classList.add("draggable-clone");
-        //     originalNode.parentNode.insertBefore(clonedNode, originalNode.nextSibling);
-        // }
-
-        // function dragDropped(e) {
-        //     if (!clonedNode) return;
-
-        //     // If the current dropzone is our initial one, then hide the cloned Node
-        //     // because otherwise you have the cloned node plus the dropped node.
-        //     const dropzone = e.data.dropzone;
-        //     console.log(dropzone)
-        //     console.log(e.data.dropzone)
-        //     console.log(initialDropzone)
-        //     console.log(_.isEqual(initialDropzone, e.data.dropzone))
-            
-        //     if (_.isEqual(initialDropzone, dropzone)) {
-        //         clonedNode.style.display = "none";
-        //         console.log("here")
-        //     }
-        //     else clonedNode.style.display = "inherit";
-        // }
-        // function dragStopped(e) {
-        //     e.cancel()
-        // }
-
-        // // const droppable = new Droppable({});
-        // const droppable = new Draggable.Droppable(document.querySelectorAll('.containers'), {
-        //     draggable: '.item',
-        //     dropzone: '.dropzone',
-        //     mirror: {
-        //         constrainDimensions: true, //prevent element from shrinking while being dragged
-        //     }
-
-        // })
-
-        // droppable.on("droppable:start", dragStart);
-        // droppable.on("droppable:dropped", dragDropped);
-        // droppable.on("droppable:out", (evt) => {
-        //     evt.cancel()
-        // })
-        // droppable.on("drag:stop", dragStopped)
-        // var start;
-        // var end;
-        // droppable.on("drag:start", (evt) => {
-        //     // evt.originalSource.style = ""
-        //     console.log(evt)
-        //     console.log("FROM START")
-        //     console.log("original source")
-        //     start = evt.data.originalSource
-        //     console.log(evt.data.originalSource)
-        //     console.log("source")
-        //     console.log(evt.source)
-        //     console.log("mirror")
-        //     console.log(evt.mirror)
-        // })
-
-        // droppable.on("droppable:dropped", (evt) => {
-        //     // evt.originalSource = start
-        //     // evt.source = start
-        //     console.log(evt)
-        //     console.log("FROM DRAGGABLE DROPPED")
-        //     console.log(evt.data.dropzone)
-        //     end = evt.data.dropzone
-        //     evt.cancel()
-
-        // })
-        // droppable.on("drag:stop", (evt) => {
-        //     console.log("END START")
-        //     console.log(end)
-        //     console.log(start)
-        //     end = start
-        //     console.log(end)
-        //     console.log(start)
-        // })
-
-        // var lastOver;
-        // droppable.on('drag:start', (evt) => {
-        //     this.lastOver = null;
-        //     let droppableItem;
-        //     droppableItem = evt.data.originalSource;
-        // });
-
-        // droppable.on('droppable:dropped', (evt) => {
-        //                 this.lastOver = evt.data.dropzone;
-        //                 console.log(this.lastOver)
-        //                 evt.cancel();
-        //             });
-
-        // droppable.on('drag:stop', (evt) => {
-        //     console.log("please work")
-        //     let droppableItem;
-        //     let droppedInto;
-        //     droppableItem = evt.data.originalSource;
-        //     droppedInto = this.lastOver;
-        // });
-
-    })
-</script>
+<script src="{{url_for('static', filename='bracket.js')}}"></script>
 <style>
     /* .draggable-dropzone--occupied { background: lightgreen; } */
 </style>
 {% endblock head %}
 {% block main %}
-<h1>2013 NCAA Tournament - Midwest Bracket</h1>
 <!-- <div class="teams">
     <div class="containers">
         {% for team in teams %}
@@ -135,140 +21,128 @@
         {% endfor %}
     </div>
 </div> -->
-
+{% if current_user.bracket %}
+<h1>You have already made a bracket! View it here!</h1>
+{% else %}
+<h1>World Cup Bracket</h1>
 <main id="tournament" class="containers">
     <!-- <div class="containers"> -->
+    <ul class="round round-1">
+        <li class="spacer">&nbsp;</li>
 
-    <ul class="left round round-1">
-        
-          <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <li class="spacer">&nbsp;</li>
-
-            <li class="game game-top ">
-                <label class="btn btn-secondary active">
-                <input type="radio" name="options" id="option1" autocomplete="off"> Lousville
-                </label>
-            </li>
-            <li class="game game-bottom ">
-                <label class="btn btn-secondary">
-                <input type="radio" name="options" id="option2" autocomplete="off"> NC A&T
-            </label></li>
-    
-            <li class="spacer">&nbsp;</li>
-            
-          </div> -->
-          <li class="spacer">&nbsp;</li>
-          <li class="game game-top ">
-            Lousville
+        {% for match in matches %}
+        {% set round = 1 %}
+        {% set team = 'home_team' if loop.index%2 == 1 else 'away_team' %}
+        <li id="round{{round}}_{{loop.index}}_home_team-li" class="game game-top ">
+            <input data_match_id="{{match.id}}" class="game_input" type="radio" name="round{{round}}_{{loop.index}}"
+                id="round{{round}}_{{loop.index}}_home_team" value="{{home_team}}" data_round="1"
+                next="round{{round + 1}}_{{((loop.index-1)/2 + 1)|round(0, 'floor')|int}}_{{team}}">
+            <label for="round{{round}}_{{loop.index}}_home_team"
+                id="round{{round}}_{{loop.index}}_home_team-label">{{match.home_team.name}}</label>
         </li>
-          <!-- <li class="game game-spacer">&nbsp;</li> -->
-          <li class="game game-bottom ">NC A&T</li>
+        <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom ">
+            <input data_match_id="{{match.id}}" class="game_input" type="radio" name="round{{round}}_{{loop.index}}"
+                id="round{{round}}_{{loop.index}}_away_team" value="{{away_team}}" data_round="1"
+                next="round{{round + 1}}_{{((loop.index-1)/2 + 1)|round(0, 'floor')|int}}_{{team}}">
+            <label for="round{{round}}_{{loop.index}}_away_team"
+                id="round{{round}}_{{loop.index}}_away_team-label">{{match.away_team.name}}</label>
 
-          <li class="spacer">&nbsp;</li>
-        <li class="game game-top ">Colo St </li>
-        <!-- <li class="game game-spacer">&nbsp;</li> -->
-        <li class="game game-bottom ">Missouri </li>
-
+        </li>
         <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top ">Oklahoma St </li>
-        <!-- <li class="game game-spacer">&nbsp;</li> -->
-        <li class="game game-bottom ">Oregon </li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top ">Saint Louis </li>
-        <!-- <li class="game game-spacer">&nbsp;</li> -->
-        <li class="game game-bottom ">New Mexico St </li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top ">Memphis </li>
-        <!-- <li class="game game-spacer">&nbsp;</li> -->
-        <li class="game game-bottom ">St Mary's </li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top ">Mich St </li>
-        <!-- <li class="game game-spacer">&nbsp;</li> -->
-        <li class="game game-bottom ">Valparaiso </li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top ">Creighton </li>
-        <!-- <li class="game game-spacer">&nbsp;</li> -->
-        <li class="game game-bottom ">Cincinnati </li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top ">Duke </li>
-        <!-- <li class="game game-spacer">&nbsp;</li> -->
-        <li class="game game-bottom ">Albany </li>
-
-        <li class="spacer">&nbsp;</li>
+        {% endfor %}
     </ul>
     <ul class="round round-2">
         <li class="spacer">&nbsp;</li>
 
-        <li class="game game-top">
-            <div class="dropzone"></div>
+        {% for i in range(1,5) %}
+        {% set round = 2 %}
+        {% set team = 'home_team' if i%2 == 1 else 'away_team' %}
+
+        <li id="round{{round}}_{{i}}_home_team-li" class="game game-top ">
+
+            <input data_match_id="{{i}}" class="game_input" type="hidden" name="round{{round}}_{{loop.index}}"
+                id="round{{round}}_{{loop.index}}_home_team" value="{{home_team}}" data_round="{{round}}"
+                next="round{{round + 1}}_{{((loop.index-1)/2 + 1)|round(0, 'floor')|int}}_{{team}}">
+            <label for="round{{round}}_{{loop.index}}_home_team" id="round{{round}}_{{loop.index}}_home_team-label"
+                hidden></label>
+            <!-- {{loop.index}} -->
         </li>
-        <!-- <li class="game game-spacer"></li> -->
-        <li class="game game-bottom">
-            <div class="dropzone"></div>
+        <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom ">
+            <input data_match_id="{{i}}" class="game_input" type="hidden" name="round{{round}}_{{loop.index}}"
+                id="round{{round}}_{{loop.index}}_away_team" value="{{away_team}}" data_round="{{round}}"
+                next="round{{round + 1}}_{{((loop.index-1)/2 + 1)|round(0, 'floor')|int}}_{{team}}">
+            <label for="round{{round}}_{{loop.index}}_away_team" id="round{{round}}_{{loop.index}}_away_team-label"
+                hidden></label>
+
         </li>
         <li class="spacer">&nbsp;</li>
+        {% endfor %}
 
-        <li class="game game-top">Oregon </li>
-        <!-- <li class="game game-spacer">&nbsp;</li> -->
-        <li class="game game-bottom ">Saint Louis </li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top ">Memphis </li>
-        <!-- <li class="game game-spacer">&nbsp;</li> -->
-        <li class="game game-bottom ">Mich St <span>70</span></li>
-
-        <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top ">Creighton <span>50</span></li>
-        <!-- <li class="game game-spacer">&nbsp;</li> -->
-        <li class="game game-bottom ">Duke </li>
-
-        <li class="spacer">&nbsp;</li>
     </ul>
     <ul class="round round-3">
         <li class="spacer">&nbsp;</li>
 
-        <li class="game game-top ">Lousville </li>
-        <!-- <li class="game game-spacer">&nbsp;</li> -->
-        <li class="game game-bottom ">Oregon </li>
+        {% for i in range(1,3) %}
+        {% set round = 3 %}
+        {% set team = 'home_team' if i%2 == 1 else 'away_team' %}
 
+        <li id="round{{round}}_{{i}}_home_team-li" class="game game-top ">
+            <input data_match_id="{{i}}" class="game_input" type="hidden" name="round{{round}}_{{loop.index}}"
+                id="round{{round}}_{{loop.index}}_home_team" value="{{home_team}}" data_round="{{round}}"
+                next="round{{round + 1}}_{{((loop.index-1)/2 + 1)|round(0, 'floor')|int}}_{{team}}">
+            <label for="round{{round}}_{{loop.index}}_home_team" id="round{{round}}_{{loop.index}}_home_team-label"
+                hidden></label>
+            <!-- {{loop.index}} -->
+        </li>
+        <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom ">
+            <input data_match_id="{{i}}" class="game_input" type="hidden" name="round{{round}}_{{loop.index}}"
+                id="round{{round}}_{{loop.index}}_away_team" value="{{away_team}}" data_round="{{round}}"
+                next="round{{round + 1}}_{{((loop.index-1)/2 + 1)|round(0, 'floor')|int}}_{{team}}">
+            <label for="round{{round}}_{{loop.index}}_away_team" id="round{{round}}_{{loop.index}}_away_team-label"
+                hidden></label>
+
+        </li>
         <li class="spacer">&nbsp;</li>
-
-        <li class="game game-top ">Mich St </li>
-        <!-- <li class="game game-spacer">&nbsp;</li> -->
-        <li class="game game-bottom ">Duke </li>
-
-        <li class="spacer">&nbsp;</li>
+        <!-- <li class="spacer">&nbsp;</li> -->
+        {% endfor %}
     </ul>
+    <!-- <li class="spacer">&nbsp;</li> -->
     <ul class="round round-4">
-        <li class="spacer">&nbsp;</li>
 
-        <li class="game game-top ">Lousville </li>
-        <!-- <li class="game game-spacer">&nbsp;</li> -->
-        <li class="game game-bottom ">Duke </li>
+        {% for i in range(1,2) %}
+        {% set round = 4 %}
+        {% set team = 'home_team' if i%2 == 1 else 'away_team' %}
 
-        <li class="spacer">&nbsp;</li>
+        <li id="round{{round}}_{{i}}_home_team-li" class="game game-top ">
+
+            <input data_match_id="{{i}}" class="game_input" type="hidden" name="round{{round}}_{{loop.index}}"
+                id="round{{round}}_{{loop.index}}_home_team" value="{{home_team}}" data_round="{{round}}"
+                next="round{{round + 1}}_{{((loop.index-1)/2 + 1)|round(0, 'floor')|int}}_{{team}}">
+            <label for="round{{round}}_{{loop.index}}_home_team" id="round{{round}}_{{loop.index}}_home_team-label"
+                hidden></label>
+            <!-- {{loop.index}} -->
+        </li>
+        <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom ">
+            <input data_match_id="{{i}}" class="game_input" type="hidden" name="round{{round}}_{{loop.index}}"
+                id="round{{round}}_{{loop.index}}_away_team" value="{{away_team}}" data_round="{{round}}"
+                next="round{{round + 1}}_{{((loop.index-1)/2 + 1)|round(0, 'floor')|int}}_{{team}}">
+            <label for="round{{round}}_{{loop.index}}_away_team" id="round{{round}}_{{loop.index}}_away_team-label"
+                hidden></label>
+
+        </li>
+        <!-- <li class="spacer">&nbsp;</li> -->
+        <!-- <li class="spacer">&nbsp;</li> -->
+        {% endfor %}
     </ul>
     <ul class="round round-5">
         <li class="spacer">&nbsp;</li>
 
-        <li class="game game-top ">Lousville </li>
+        <li class="game game-top "></li>
         <!-- <li class="game game-spacer">&nbsp;</li>  -->
         <li class="spacer">&nbsp;</li>
     </ul>
     <!-- </div> -->
-
+    <button id="save_bracket">Save</button>
 </main>
+{% endif %}
 {% endblock main %}
