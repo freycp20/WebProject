@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %} Schedule {% endblock title %}
-{%  block head %}
+{% block head %}
 {{super()}}
 <!-- PUT EXTRA HEAD CONTENT BELOW THIS LINE -->
 
@@ -8,10 +8,57 @@
 
 <!-- EDIT HEAD STUFF ABOVE THIS LINE -->
 {% endblock head %}
-{% block main %} 
+{% block main %}
 <!-- DO NOT EDIT ABOVE THIS LINE UNLESS YOU ARE DOING 3RD PARTY API -->
 
 <!-- THIS IS WHERE ALL YOUR MATCH STUFF GOES MANNY -->
+
+<div>
+    <a href="{{url_for('get_matches')}}"> &lang; back to all games</a>
+    <!-- upcoming match or match history -->
+    <h5 class="text-center align-middle">Upcoming</h5>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col" align="right">
+                    <h2><img src="/static/flags/{{match.home_team.alpha_2}}.gif" alt="Home Flag" class="rounded m-3"
+                            width="130">{{match.home_team.name}}</h2>
+                </div>
+
+                <div class="col" align="center" width="130">
+                    <h2>VS</h2>
+                </div>
+                <div class="col" align="left">
+                <h2>{{match.away_team.name}}<img src="/static/flags/{{match.away_team.alpha_2}}.gif" alt="Away Flag" class="rounded m-3"
+                        width="130"></h2>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            
+        </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="card">
+    <div class="card-body">
+        <h2 class="text-center align-middle">{{match.date.strftime("%a %b %d %I:%M %p")}}</h2>
+    </div>
+</div>
+<!-- TODO: Stadium and weather -->
 
 
 <!-- DO NOT EDIT BELOW THIS LINE -->
