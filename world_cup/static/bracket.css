@@ -71,17 +71,3 @@ main{
       height: 30px;
 
     }
-
-    .item {
-        /* height: 100%; */
-        flex-grow: 1;
-
-        /* padding: 10px; */
-        background-color: aqua;
-        border-radius: 10px;
-        border: 1px solid black;
-    }
-    .dropzone{
-        width: 100%;
-        height: 100%;
-    }

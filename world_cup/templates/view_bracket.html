@@ -1,10 +1,112 @@
 {% extends "base.html" %}
 {% block title %} Schedule {% endblock title %}
-{%  block head %}
+{% block head %}
 {{super()}}
 <!-- PUT EXTRA HEAD CONTENT HERE -->
+<link href="{{ url_for('static', filename='bracket.css') }}" rel="stylesheet">
+<!-- <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/draggable.bundle.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/isEqual.min.js"></script> -->
+<script src="{{url_for('static', filename='bracket.js')}}"></script>
 {% endblock head %}
-{% block main %} 
+{% block main %}
 <!-- PUT MAIN CONTENT HERE -->
-<h1>View your brackets here!</h1>
+{% if bracket %}
+<!-- <div class="containers"> -->
+    <main id="tournament" class="containers">
+
+<ul class="round round-1">
+    <li class="spacer">&nbsp;</li>
+
+    {% for i in range(0,8) %}
+    {% set round = 1 %}
+    {% set team = 'home_team' if loop.index%2 == 1 else 'away_team' %}
+    {% set home_team = bracket[i*2] %}
+    {% set away_team = bracket[i*2+1] %}
+    <li id="round{{round}}_{{loop.index}}_home_team-li" class="game game-top {{'winner' if home_team.checked else ''}}">
+        {{home_team.team_name}}
+    </li>
+    <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom {{'winner' if away_team.checked else ''}}">
+        {{away_team.team_name}}
+    </li>
+    <li class="spacer">&nbsp;</li>
+    {% endfor %}
+</ul>
+<ul class="round round-2">
+    <li class="spacer">&nbsp;</li>
+
+    {% for i in range(0,4) %}
+    {% set round = 2 %}
+    {% set winner = 'home_team' if i%2 == 1 else 'away_team' %}
+    {% set home_team = bracket[16+i*2] %}
+    {% set away_team = bracket[16+i*2+1] %}
+    <li id="round{{round}}_{{loop.index}}_home_team-li" class="game game-top {{'winner' if home_team.checked else ''}}">
+        {{home_team.team_name}}
+    </li>
+    <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom {{'winner' if away_team.checked else ''}}">
+        {{away_team.team_name}}
+    </li>
+    <li class="spacer">&nbsp;</li>
+
+    <!-- <li id="round2_{{i}}_home_team-li" class="game game-top">
+            <input data_match_id="{{i}}" class="game_input" type="hidden" name="round2_{{loop.index}}" id="round2_{{loop.index}}_home_team" value="{{away_team}}" data_round="2">
+            <label for="round2_{{loop.index}}_home_team" id="round2_{{loop.index}}_home_team-label" hidden></label>
+
+        </li>
+        <li id="round2_{{i}}_away_team-li" class="game game-bottom">
+            <input data_match_id="{{i}}" class="game_input" type="hidden" name="round2_{{loop.index}}" id="round2_{{loop.index}}_away_team" value="{{away_team}}" data_round="2">
+            <label for="round2_{{loop.index}}_away_team" id="round2_{{loop.index}}_away_team-label" hidden></label>
+
+        </li>
+        <li class="spacer">&nbsp;</li> -->
+    <!-- <li class="spacer">&nbsp;</li> -->
+    {% endfor %}
+
+</ul>
+<ul class="round round-3">
+    <li class="spacer">&nbsp;</li>
+
+    {% for i in range(0,2) %}
+    {% set round = 3 %}
+    {% set team = 'home_team' if i%2 == 1 else 'away_team' %}
+    {% set home_team = bracket[24+i*2] %}
+    {% set away_team = bracket[24+i*2+1] %}
+    <li id="round{{round}}_{{loop.index}}_home_team-li" class="game game-top {{'winner' if home_team.checked else ''}}">
+        {{home_team.team_name}}
+    </li>
+    <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom {{'winner' if away_team.checked else ''}}">
+        {{away_team.team_name}}
+    </li>
+    <li class="spacer">&nbsp;</li>
+    <!-- <li class="spacer">&nbsp;</li> -->
+    {% endfor %}
+</ul>
+<!-- <li class="spacer">&nbsp;</li> -->
+<ul class="round round-4">
+
+    {% for i in range(0,1) %}
+    {% set round = 4 %}
+    {% set team = 'home_team' if i%2 == 1 else 'away_team' %}
+    {% set home_team = bracket[28+i*2] %}
+    {% set away_team = bracket[28+i*2+1] %}
+    <li id="round{{round}}_{{loop.index}}_home_team-li" class="game game-top {{'winner' if home_team.checked else ''}}">
+        {{home_team.team_name}}
+    </li>
+    <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom {{'winner' if away_team.checked else ''}}">
+        {{away_team.team_name}}
+    </li>
+    <!-- <li class="spacer">&nbsp;</li> -->
+    <!-- <li class="spacer">&nbsp;</li> -->
+    {% endfor %}
+</ul>
+<ul class="round round-5">
+    <li class="spacer">&nbsp;</li>
+
+    <li class="game game-top ">Lousville </li>
+    <!-- <li class="game game-spacer">&nbsp;</li>  -->
+    <li class="spacer">&nbsp;</li>
+</ul>
+</main>
+{% else %}
+<h1>No brackets yet! Go make one!</h1>
+{% endif %}
 {% endblock main %}
