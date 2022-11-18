@@ -14,7 +14,7 @@
 <!-- THIS IS WHERE ALL YOUR MATCH STUFF GOES MANNY -->
 
 <div>
-    <a href="{{url_for('get_matches')}}"> &lang; back to all games</a>
+    <a href="{{url_for('get_matches')}}">      &lang; back to all games</a>
     <!-- upcoming match or match history -->
     <h5 class="text-center align-middle">Upcoming</h5>
 </div>
@@ -41,25 +41,36 @@
 </div>
 
 
-
-
-
-<!-- <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            
-        </div>
-    </div>
-  </div>
-</div> -->
-
 <div class="card">
     <div class="card-body">
         <h2 class="text-center align-middle">{{match.date.strftime("%a %b %d %I:%M %p")}}</h2>
     </div>
 </div>
 <!-- TODO: Stadium and weather -->
+<div class="row">
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <img class="card-img-top" src="" alt="">
 
+            <div class="card-body">
+                <h2>><h2>Stadium: </h2>{{match.stadiumObj.name}}</h2>
+            
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <img class="card-img-top" src="" alt="">
+            <div class="card-body">
+                <p class="card-text">
+                    Some quick example text to build on the 
+                    card title and make up the bulk of the 
+                    card's content.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- DO NOT EDIT BELOW THIS LINE -->
 {% endblock main %}
