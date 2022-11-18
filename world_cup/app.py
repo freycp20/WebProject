@@ -165,18 +165,18 @@ def post_input_scores():
         # form data is valid, add it to authors and redirect
         match = db.session.query(Match).filter_by(id=int(form.match_id.data)).first()
         try:
-            if form.homeScore.data == -1 and form.awayScore.data == -1:
+            if form.homeScore.data == None and form.awayScore.data == None:
                 match.score_home = None
                 match.score_away = None
                 db.session.add(match)
                 db.session.commit()
-            if form.homeScore.data != -1 and form.awayScore.data != -1:
+            if form.homeScore.data != None and form.awayScore.data != None:
                 match.score_home = form.homeScore.data
                 match.score_away = form.awayScore.data
                 db.session.add(match)
                 db.session.commit()
             else:
-                flash(f"Score could not be negative!")
+                flash(f"Score could not be none!")
                 # reload new form
                 return redirect(url_for('get_input_scores'))
         except:
