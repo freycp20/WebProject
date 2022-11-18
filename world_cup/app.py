@@ -8,6 +8,7 @@ python -m pip install --upgrade flask-login
 ###############################################################################
 # Imports
 ###############################################################################
+import json
 
 import os
 import sys
@@ -70,6 +71,7 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.LargeBinary) # hash is a binary attribute
     admin_status = db.Column(db.Integer)
     score = db.Column(db.Integer)
+    bracket = db.Column(db.Unicode)
     # make a write-only password property that just updates the stored hash
     @property
     def password(self):
@@ -196,18 +198,40 @@ def post_input_scores():
 
 
 @app.get('/create-bracket/')
+@login_required
 def get_create_bracket():
-    teams = ["Lousville", "Colo St", "NC A&T"]
-    return render_template('create_bracket.html', current_user=current_user, teams=teams)
+    # teams = Team.query.all()
+    matches = Match.query.all()
+    filtered_matches = []
+    existing_teams = []
+    for i in range(8):
+        ht = matches[i].home_team
+        at = matches[i].away_team
+        if ht not in existing_teams and at not in existing_teams:
+            existing_teams.append(ht)
+            existing_teams.append(at)
+            filtered_matches.append(matches[i])
+    return render_template('create_bracket.html', current_user=current_user, matches=filtered_matches)
 
 @app.post('/create-bracket/')
+@login_required
 def post_create_bracket():
-    pass
+    # print(request.data)
+    data = request.data.decode('utf-8')
+    user = db.session.query(User).filter_by(id=int(current_user.id)).first()
+    user.bracket = data
+    db.session.add(user)
+    db.session.commit()
+    return redirect(url_for("get_view_bracket"))
 
 @app.get('/view-bracket/')
 @login_required
 def get_view_bracket():
-    return render_template("view_bracket.html", current_user=current_user)
+    bracket = current_user.bracket
+    if bracket != None:
+        bracket = json.loads(bracket).get("input_labels")
+
+    return render_template("view_bracket.html", current_user=current_user, bracket=bracket)
 
 @app.get('/register/')
 def get_register():
@@ -272,9 +296,19 @@ def index():
     teams = Team.query.all()
     return render_template('schedule.html', current_user=current_user, matches=matches, teams=teams)
 
+@app.get('/match/')
+def get_matches():
+    # match.home_team-match.away_team
+    #senegal-netherlands
+    #/match/senegal-netherlands/
+    match = Match.query.first()
+    return render_template("match.html", match=match, current_user=current_user)
+
 @app.get('/logout/')
 @login_required
 def get_logout():
     logout_user()
     flash('You have been logged out')
     return redirect(url_for('index'))
+
+
