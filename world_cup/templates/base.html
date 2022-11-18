@@ -10,6 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
+
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -31,6 +32,7 @@
 <link href="{{ url_for('static', filename='headers.css') }}" rel="stylesheet">
 {% endblock head %}
 </head>
+
 <body>
     {% block header %}
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -40,10 +42,11 @@
     </symbol>
   </svg>
 
-    <div class="container">
+    <div class="container" >
       <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
         <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+          <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg> -->
+          <img src="https://th.bing.com/th/id/R.19644baf4992a05dd38dde6ce9755ce3?rik=39DME3uKaXkU6g&riu=http%3a%2f%2fi.imgur.com%2fBpdk96e.png&ehk=XAvTOIoMWPf3EXnZnoFEtDcTD2hmkl07%2bYwKlgrmGTY%3d&risl=1&pid=ImgRaw&r=0" width="60" height="55">
         </a>
   
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
