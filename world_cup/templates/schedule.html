@@ -11,79 +11,140 @@
 
 <div class="container2">
 
-    <div class="leaderboardTable">
-        <h1>LeaderBoard</h1>
-        <table id="leaderboard" class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                <th>Username</th>
-                <th>Points</th>
-                </tr>
-            </thead>
-        </table>
-    </div>
+    <div class="card" style="width: 20rem;">
 
-    <div class="Tables">
-        <h1>
-            Next Game
-        </h1>
-        <table id="nextgame-table" class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Home Team</th>
-                    <th>Away Team</th>
-                    <th>Stadium</th>
-                </tr>
-            </thead>
-            <tbody>
-             
-                <tr>
-                    <td>{{matches[0].date.strftime("%a %b %d %I:%M %p")}}</td>
-                    <td><img src="/static/flags/{{matches[0].home_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{matches[0].home_team.name}} flag"/>{{matches[0].home_team.name}}</td>
-                    <td><img src="/static/flags/{{matches[0].away_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{matches[0].away_team.name}} flag"/>{{matches[0].away_team.name}}</td>
-                    <td>{{matches[0].stadiumObj.name}}</td>
-                  
-                </tr>
-                
-            </tbody>
-        </table>
-
-
-        <h1>
-            Upcoming Games
-        </h1>
-        <table id="match-list" class="table table-bordered table-hover">
-            <!-- <thead>
-                <tr>
-                <th>Date</th>
-                <th>Home Team</th>
-                <th>Away Team</th>
-                <th>Stadium</th>
-                </tr>
-            </thead> -->
-            <tbody>
-                {% for match in matches %}
-                <tr>
-                    <td>{{match.date.strftime("%a %b %d %I:%M %p")}}</td>
-                    <td><img src="/static/flags/{{match.home_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{match.home_team.name}} flag"/>{{match.home_team.name}}</td>
-                    <td><img src="/static/flags/{{match.away_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{match.away_team.name}} flag"/>{{match.away_team.name}}</td>
-                    <td>{{match.stadiumObj.name}}</td>
-                    {% if match.score_home and match.score_away %}
-                        <td>Score: {{match.score_home}} - {{match.score_away}}</td>
-                    {% else %}
-                        <td>Score: None</td>
-                    {% endif %}
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-
+        <div class="card-header">
+            LeaderBoard
+          </div>
+        <!-- <h1>LeaderBoard</h1> -->
+        <div class="card-body">
+            <table id="leaderboard" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                    <th>Username</th>
+                    <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for leaderBoardScore in leaderBoardScores %}
+                    <tr>
+                        <td>{{leaderBoardScore.email}}</td>
+                        <td>{{leaderBoardScore.score}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
     </div>
 
     
 
+    <div class="Tables">
+        <div class="card">
+            <div class="card-header">
+                Previous Games
+            </div>
+            <div class="card-body">
+                <table id="prevgame-table" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Home Team</th>
+                            <th>Away Team</th>
+                            <th>Stadium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for prevGame in prevGames %}
+                        <tr>
+                            <td>{{prevGame.date.strftime("%a %b %d %I:%M %p")}}</td>
+                            <td><img src="/static/flags/{{prevGame.home_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{prevGame.home_team.name}} flag"/>{{prevGame.home_team.name}}</td>
+                            <td><img src="/static/flags/{{prevGame.away_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{prevGame.away_team.name}} flag"/>{{prevGame.away_team.name}}</td>
+                            <td>{{prevGame.stadiumObj.name}}</td>
+                          
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- <h1>
+            Previous Games
+        </h1> -->
+        
+        <div class="card">
+            <div class="card-header">
+                Next Game
+            </div>
 
+            <div class="card-body">
+                <table id="nextgame-table" class="table table-bordered table-hover">
+                    <thead>
+                        <!-- <tr>
+                            <th>Date</th>
+                            <th>Home Team</th>
+                            <th>Away Team</th>
+                            <th>Stadium</th>
+                        </tr> -->
+                    </thead>
+                    <tbody>
+                      
+                        <tr>
+                            <td>{{matches[0].date.strftime("%a %b %d %I:%M %p")}}</td>
+                            <td><img src="/static/flags/{{matches[0].home_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{matches[0].home_team.name}} flag"/>{{matches[0].home_team.name}}</td>
+                            <td><img src="/static/flags/{{matches[0].away_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{matches[0].away_team.name}} flag"/>{{matches[0].away_team.name}}</td>
+                            <td>{{matches[0].stadiumObj.name}}</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- <h1>
+            Next Game
+        </h1> -->
+        
+
+        <div class="card">
+            <div class="card-header">
+                Upcoming Games
+            </div>
+
+            <div clas="card-body">
+                <table id="match-list" class="table table-bordered table-hover">
+                    <!-- <thead>
+                        <tr>
+                        <th>Date</th>
+                        <th>Home Team</th>
+                        <th>Away Team</th>
+                        <th>Stadium</th>
+                        </tr>
+                    </thead> -->
+                    <tbody>
+                        {% for match in matches[1:] %}
+                        <tr>
+                            <td>{{match.date.strftime("%a %b %d %I:%M %p")}}</td>
+                            <td><img src="/static/flags/{{match.home_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{match.home_team.name}} flag"/>{{match.home_team.name}}</td>
+                            <td><img src="/static/flags/{{match.away_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{match.away_team.name}} flag"/>{{match.away_team.name}}</td>
+                            <td>{{match.stadiumObj.name}}</td>
+                            {% if match.score_home and match.score_away %}
+                                <td>Score: {{match.score_home}} - {{match.score_away}}</td>
+                            {% else %}
+                                <td>Score: None</td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+        
+            </div>
+        </div>
+        <!-- <h1>
+            Upcoming Games
+        </h1> -->
+        
+    </div>
     
 </div>
 

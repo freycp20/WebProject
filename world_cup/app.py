@@ -297,11 +297,19 @@ def post_login():
 
 @app.get('/')
 def index():
-    matches = Match.query.order_by(Match.date).all()
-    teams = Team.query.all()
+    #matches = Match.query.order_by(Match.date).all()
+    matches = Match.query.filter(Match.date > datetime.now()).order_by(Match.date).all()
     for match in matches:
         match.date = datetime.strptime(match.date, "%Y-%m-%d %H:%M:%S.%f")
-    return render_template('schedule.html', current_user=current_user, matches=matches, teams=teams)
+    teams = Team.query.all()
+    #do a select statement for matches that takes the matches > current date
+    #for prev games - do another query where filter where matches < current date
+    prevGames = Match.query.filter(Match.date < datetime.now()).order_by(Match.date).all()
+    for match in prevGames:
+        match.date = datetime.strptime(match.date, "%Y-%m-%d %H:%M:%S.%f")
+    #matches[1:] - shows matches from current and on (in html)
+    leaderBoardScores = User.query.all()
+    return render_template('schedule.html', current_user=current_user, matches=matches, teams=teams, prevGames = prevGames[-2:], leaderBoardScores=leaderBoardScores)
 
 @app.get('/match/')
 def get_matches():
