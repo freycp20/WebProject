@@ -17,6 +17,7 @@ from flask import request, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, LoginManager, login_required
 from flask_login import login_user, logout_user, current_user
+from datetime import datetime
 
 # Make sure this directory is in your Python path for imports
 scriptdir = os.path.dirname(os.path.abspath(__file__))
@@ -292,9 +293,14 @@ def post_login():
 
 @app.get('/')
 def index():
-    matches = Match.query.all()
+    matches = Match.query.filter(Match.date > datetime.now()).all()
     teams = Team.query.all()
-    return render_template('schedule.html', current_user=current_user, matches=matches, teams=teams)
+    #do a select statement for matches that takes the matches > current date
+    #for prev games - do another query where filter where matches < current date
+    prevGames = Match.query.filter(Match.date < datetime.now()).all()
+    #matches[1:] - shows matches from current and on (in html)
+    leaderBoardScores = User.query.all()
+    return render_template('schedule.html', current_user=current_user, matches=matches, teams=teams, prevGames = prevGames[-2:], leaderBoardScores=leaderBoardScores)
 
 @app.get('/match/')
 def get_matches():
