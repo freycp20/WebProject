@@ -45,7 +45,7 @@
     float: left;
     height: 100 px;
     width: 100%;
-    padding: 0 10px;
+    padding: 10px;
     display: flex;
   } 
 
@@ -53,6 +53,18 @@
     flex-grow: 1;
     
   }
+
+  .card-header{
+    font-size: 1.1em;
+  
+  }
+
+  /* .container{
+   
+    
+   
+    background-color:rgb(211, 211, 211);
+  } */
 
 
 
