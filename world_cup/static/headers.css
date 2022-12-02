@@ -33,7 +33,7 @@
 
   body{
     font-family:'Candara';
-    /* font-family: 'Copperplate'; */
+  
   }
 
   h1{
@@ -42,11 +42,12 @@
   }
 
   .container2 {
-    float: left;
+    float: center;
     height: 100 px;
     width: 100%;
-    padding: 10px;
     display: flex;
+    padding-left: 45px;
+   
   } 
 
   .leaderboardTable{
@@ -59,12 +60,21 @@
   
   }
 
-  /* .container{
-   
-    
-   
-    background-color:rgb(211, 211, 211);
-  } */
+
+  img {
+  
+    box-shadow: 0 0 5px 1px lightgrey;
+  }
+
+  .logo{
+    box-shadow: 0 0 0px 0px ;
+  }
+
+  
+
+
+
+  
 
 
 

@@ -299,7 +299,7 @@ def index():
     #for prev games - do another query where filter where matches < current date
     prevGames = Match.query.filter(Match.date < datetime.now()).all()
     #matches[1:] - shows matches from current and on (in html)
-    leaderBoardScores = User.query.all()
+    leaderBoardScores = User.query.order_by(User.score.asc()).all()
     return render_template('schedule.html', current_user=current_user, matches=matches, teams=teams, prevGames = prevGames[-2:], leaderBoardScores=leaderBoardScores)
 
 @app.get('/match/')
