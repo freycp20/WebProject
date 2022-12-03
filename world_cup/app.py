@@ -132,7 +132,7 @@ class Team(db.Model):
 class Match(db.Model):
     __tablename__ = 'Matches'
     id = db.Column(db.Integer, primary_key=True)
-    date = db.Column(db.Date, nullable=False)
+    date = db.Column(db.Text, nullable=False)
     group = db.Column(db.Unicode, nullable=False)
     # Stadium and teams are other tables
     stadium = db.Column(db.Integer, db.ForeignKey("Stadiums.id"))
@@ -158,7 +158,9 @@ from scores_form import ScoresForm
 @app.get('/input-scores/')
 def get_input_scores():
     form = ScoresForm()
-    matches = Match.query.all()
+    matches = Match.query.order_by(Match.date).all()
+    for match in matches:
+        match.date = datetime.strptime(match.date, "%Y-%m-%d %H:%M:%S.%f")
     return render_template("input_scores.html", form=form, matches=matches, current_user=current_user)
 
 @app.post('/input-scores/')
@@ -202,7 +204,9 @@ def post_input_scores():
 @login_required
 def get_create_bracket():
     # teams = Team.query.all()
-    matches = Match.query.all()
+    matches = Match.query.order_by(Match.date).all()
+    for match in matches:
+        match.date = datetime.strptime(match.date, "%Y-%m-%d %H:%M:%S.%f")
     filtered_matches = []
     existing_teams = []
     for i in range(8):
@@ -293,16 +297,21 @@ def post_login():
 
 @app.get('/')
 def index():
+    #matches = Match.query.order_by(Match.date).all()
     date = datetime(2022,11,27)
     #nov 27
     
     # date = datetime.now()
 
-    matches = Match.query.filter(Match.date > date).all()
+    matches = Match.query.filter(Match.date > date).order_by(Match.date).all()
+    for match in matches:
+        match.date = datetime.strptime(match.date, "%Y-%m-%d %H:%M:%S.%f")
     teams = Team.query.all()
     #do a select statement for matches that takes the matches > current date
     #for prev games - do another query where filter where matches < current date
-    prevGames = Match.query.filter(Match.date < date).all()
+    prevGames = Match.query.filter(Match.date < datetime.now()).order_by(Match.date).all()
+    for match in prevGames:
+        match.date = datetime.strptime(match.date, "%Y-%m-%d %H:%M:%S.%f")
     #matches[1:] - shows matches from current and on (in html)
     leaderBoardScores = User.query.order_by(User.score.asc()).all()
     return render_template('schedule.html', current_user=current_user, matches=matches, teams=teams, prevGames = prevGames[-2:], leaderBoardScores=leaderBoardScores)
