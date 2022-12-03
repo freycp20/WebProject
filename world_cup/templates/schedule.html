@@ -3,6 +3,7 @@
 {%  block head %}
 {{super()}}
 <!-- PUT EXTRA HEAD CONTENT HERE -->
+<script src="{{url_for('static', filename='schedule.js')}}"></script>
 {% endblock head %}
 {% block main %} 
 <!-- PUT MAIN CONTENT HERE -->
@@ -16,17 +17,18 @@
     
                 <div class="card-header">
                     LeaderBoard
+                    <button type="button" id="refresh-leaderboard" class="btn btn-secondary">Refresh Scores!</button>
                   </div>
                 <!-- <h1>LeaderBoard</h1> -->
                 <div class="card-body">
-                    <table id="leaderboard" class="table table-bordered table-hover">
+                    <table id="leaderboard-table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                             <th>Username</th>
                             <th>Points</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="leaderboard-body">
                             {% for leaderBoardScore in leaderBoardScores %}
                             <tr>
                                 <td>{{leaderBoardScore.email}}</td>
