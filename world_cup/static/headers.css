@@ -36,6 +36,11 @@
   
   }
 
+  .table-header {
+    color: rgb(114, 114, 114);
+    background-color: rgb(244, 244, 244);
+  }
+
   h1{
    
     font-size:xx-large;
@@ -57,7 +62,8 @@
 
   .card-header{
     font-size: 1.1em;
-  
+    font-weight: bold;
+    /* color: gray; */
   }
 
 
@@ -71,7 +77,7 @@
   }
 
   #refresh-leaderboard{
-    margin-left: 50px;
+    margin-left: 70px;
     
   }
 
