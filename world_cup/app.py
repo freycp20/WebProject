@@ -298,17 +298,22 @@ def post_login():
 @app.get('/')
 def index():
     #matches = Match.query.order_by(Match.date).all()
-    matches = Match.query.filter(Match.date > datetime.now()).order_by(Match.date).all()
+    date = datetime(2022,11,27)
+    #nov 27
+    
+    # date = datetime.now()
+
+    matches = Match.query.filter(Match.date > date).order_by(Match.date).all()
     for match in matches:
         match.date = datetime.strptime(match.date, "%Y-%m-%d %H:%M:%S.%f")
     teams = Team.query.all()
     #do a select statement for matches that takes the matches > current date
     #for prev games - do another query where filter where matches < current date
-    prevGames = Match.query.filter(Match.date < datetime.now()).order_by(Match.date).all()
+    prevGames = Match.query.filter(Match.date < date).order_by(Match.date).all()
     for match in prevGames:
         match.date = datetime.strptime(match.date, "%Y-%m-%d %H:%M:%S.%f")
     #matches[1:] - shows matches from current and on (in html)
-    leaderBoardScores = User.query.all()
+    leaderBoardScores = User.query.order_by(User.score.asc()).all()
     return render_template('schedule.html', current_user=current_user, matches=matches, teams=teams, prevGames = prevGames[-2:], leaderBoardScores=leaderBoardScores)
 
 @app.get('/match/')
@@ -326,4 +331,17 @@ def get_logout():
     flash('You have been logged out')
     return redirect(url_for('index'))
 
+@app.get('/get-user-scores/')
+def return_scores():
+    # return a json containing all the user scores
+    # print()
+    # leaderBoardScores = User.query.order_by(User.score.asc()).all()
+    users_scores = {}
 
+    for user in User.query.all():
+        # print(user.email)
+        users_scores[f"{user.email}"] = user.score
+
+    # print(users_scores)
+    return users_scores
+    # return {"admin@admin.com":10,"eraine2121@gmail.com":1,"fdfsdfm@hotmail.org":51,"freycp20@gcc.edu":2,"freycp2@gcc.edu":6,"test@gmail.com":16}

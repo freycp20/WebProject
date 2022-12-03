@@ -3,6 +3,7 @@
 {%  block head %}
 {{super()}}
 <!-- PUT EXTRA HEAD CONTENT HERE -->
+<script src="{{url_for('static', filename='schedule.js')}}"></script>
 {% endblock head %}
 {% block main %} 
 <!-- PUT MAIN CONTENT HERE -->
@@ -10,139 +11,141 @@
 
 
 <div class="container2">
-
-    <div class="card" style="width: 20rem;">
-
-        <div class="card-header">
-            LeaderBoard
-          </div>
-        <!-- <h1>LeaderBoard</h1> -->
-        <div class="card-body">
-            <table id="leaderboard" class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                    <th>Username</th>
-                    <th>Points</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for leaderBoardScore in leaderBoardScores %}
-                    <tr>
-                        <td>{{leaderBoardScore.email}}</td>
-                        <td>{{leaderBoardScore.score}}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+    <div class="p-1">
+        <div class="p-1">
+            <div class="card shadow" style="width: 20rem;">
+    
+                <div class="card-header">
+                    LeaderBoard
+                    <button type="button" id="refresh-leaderboard" class="btn btn-sm btn-outline-secondary">Refresh Scores!</button>
+                  </div>
+                <!-- <h1>LeaderBoard</h1> -->
+               
+                <div class="card-body">
+                    <table id="leaderboard-table" class="table table-bordered table-hover">
+                        <thead class="table-header">
+                            <tr>
+                            <th>Username</th>
+                            <th>Points</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-body">
+                            {% for leaderBoardScore in leaderBoardScores %}
+                            <tr>
+                                <td>{{leaderBoardScore.email}}</td>
+                                <td>{{leaderBoardScore.score}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
         </div>
-        
+    </div>
+   
+
+    <div class="p-1">
+        <div class="p-1">
+            <div class="card shadow">
+                <div class="card-header">
+                    Previous Games
+                </div>
+                <div class="card-body">
+                    <table id="prevgame-table" class="table table-bordered table-hover">
+                        <thead>
+                            <tr class="table-header">
+                                <th>Date</th>
+                                <th>Home Team</th>
+                                <th>Score</th>
+                                <th>Away Team</th>
+                                <th>Stadium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for prevGame in prevGames %}
+                            <tr onclick="window.location='match'">
+                                <td style="vertical-align:middle">{{prevGame.date.strftime("%a %b %d %I:%M %p")}}</td>
+                                <td><img src="/static/flags/{{prevGame.home_team.alpha_2}}.gif" class="rounded m-3" height="28" width="40" alt="{{prevGame.home_team.name}} flag"/>{{prevGame.home_team.name}}</td>
+                                {% if prevGame.score_home and prevGame.score_away %}
+                                    <td style="vertical-align:middle" >Score: {{prevGame.score_home}} - {{preGame.score_away}}</td>
+                                {% else %}
+                                    <td style="vertical-align:middle" >Score: None</td>
+                                {% endif %}
+                                <td><img src="/static/flags/{{prevGame.away_team.alpha_2}}.gif" class="rounded m-3" height="28" width="40" alt="{{prevGame.away_team.name}} flag"/>{{prevGame.away_team.name}}</td>
+                                <td style="vertical-align:middle">{{prevGame.stadiumObj.name}}</td>
+                              
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+           
     </div>
 
     
+        <div class="p-1">
 
-    <div class="Tables">
-        <div class="card">
-            <div class="card-header">
-                Previous Games
+            <div class="card shadow">
+                <div class="card-header">
+                    Next Game
+                </div>
+    
+                <div class="card-body">
+                    <table id="nextgame-table" class="table table-bordered table-hover">
+                        <thead>
+                            
+                        </thead>
+                        <tbody>
+                            <tr onclick="window.location='match'" >
+                                <td style="vertical-align:middle">{{matches[0].date.strftime("%a %b %d %I:%M %p")}}</td>
+                                <td><img src="/static/flags/{{matches[0].home_team.alpha_2}}.gif" class="rounded m-3" height="28" width="40" alt="{{matches[0].home_team.name}} flag"/>{{matches[0].home_team.name}}</td>
+                                <td><img src="/static/flags/{{matches[0].away_team.alpha_2}}.gif" class="rounded m-3" height="28" width="40" alt="{{matches[0].away_team.name}} flag"/>{{matches[0].away_team.name}}</td>
+                                <td style="vertical-align:middle">{{matches[0].stadiumObj.name}}</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="card-body">
-                <table id="prevgame-table" class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Home Team</th>
-                            <th>Away Team</th>
-                            <th>Stadium</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for prevGame in prevGames %}
-                        <tr>
-                            <td>{{prevGame.date.strftime("%a %b %d %I:%M %p")}}</td>
-                            <td><img src="/static/flags/{{prevGame.home_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{prevGame.home_team.name}} flag"/>{{prevGame.home_team.name}}</td>
-                            <td><img src="/static/flags/{{prevGame.away_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{prevGame.away_team.name}} flag"/>{{prevGame.away_team.name}}</td>
-                            <td>{{prevGame.stadiumObj.name}}</td>
-                          
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+            
+
         </div>
-        <!-- <h1>
-            Previous Games
-        </h1> -->
         
-        <div class="card">
-            <div class="card-header">
-                Next Game
-            </div>
+        
 
-            <div class="card-body">
-                <table id="nextgame-table" class="table table-bordered table-hover">
-                    <thead>
-                        <!-- <tr>
-                            <th>Date</th>
-                            <th>Home Team</th>
-                            <th>Away Team</th>
-                            <th>Stadium</th>
-                        </tr> -->
-                    </thead>
-                    <tbody>
-                      
-                        <tr>
-                            <td>{{matches[0].date.strftime("%a %b %d %I:%M %p")}}</td>
-                            <td><img src="/static/flags/{{matches[0].home_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{matches[0].home_team.name}} flag"/>{{matches[0].home_team.name}}</td>
-                            <td><img src="/static/flags/{{matches[0].away_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{matches[0].away_team.name}} flag"/>{{matches[0].away_team.name}}</td>
-                            <td>{{matches[0].stadiumObj.name}}</td>
-                        </tr>
+        <div class="p-1">
+
+            <div class="card shadow">
+                <div class="card-header">
+                    Upcoming Games
+                </div>
+    
+                <div class="card-body">
+                    <table id="match-list" class="table table-bordered table-hover">
+                        <thead>
+                           
+                        </thead>
                         
-                    </tbody>
-                </table>
+                        <tbody>
+                            {% for match in matches[1:] %}
+                            <tr onclick="window.location='match'" >
+                                <td style="vertical-align:middle">{{match.date.strftime("%a %b %d %I:%M %p")}}</td>
+                                <td><img src="/static/flags/{{match.home_team.alpha_2}}.gif" class="rounded m-3" height="28" width="40" alt="{{match.home_team.name}} flag"/>{{match.home_team.name}}</td>
+                                <td><img src="/static/flags/{{match.away_team.alpha_2}}.gif" class="rounded m-3" height="28" width="40" alt="{{match.away_team.name}} flag"/>{{match.away_team.name}}</td>
+                                <td style="vertical-align:middle">{{match.stadiumObj.name}}</td>
+                               
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+            
+                </div>
             </div>
+           
         </div>
-        <!-- <h1>
-            Next Game
-        </h1> -->
         
-
-        <div class="card">
-            <div class="card-header">
-                Upcoming Games
-            </div>
-
-            <div clas="card-body">
-                <table id="match-list" class="table table-bordered table-hover">
-                    <!-- <thead>
-                        <tr>
-                        <th>Date</th>
-                        <th>Home Team</th>
-                        <th>Away Team</th>
-                        <th>Stadium</th>
-                        </tr>
-                    </thead> -->
-                    <tbody>
-                        {% for match in matches[1:] %}
-                        <tr>
-                            <td>{{match.date.strftime("%a %b %d %I:%M %p")}}</td>
-                            <td><img src="/static/flags/{{match.home_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{match.home_team.name}} flag"/>{{match.home_team.name}}</td>
-                            <td><img src="/static/flags/{{match.away_team.alpha_2}}.gif" class="rounded m-3" width="50" alt="{{match.away_team.name}} flag"/>{{match.away_team.name}}</td>
-                            <td>{{match.stadiumObj.name}}</td>
-                            {% if match.score_home and match.score_away %}
-                                <td>Score: {{match.score_home}} - {{match.score_away}}</td>
-                            {% else %}
-                                <td>Score: None</td>
-                            {% endif %}
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-        
-            </div>
-        </div>
-        <!-- <h1>
-            Upcoming Games
-        </h1> -->
         
     </div>
     
