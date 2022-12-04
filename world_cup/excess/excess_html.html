@@ -94,3 +94,61 @@
           <li class="game game-bottom ">Duke </li>
   
           <li class="spacer">&nbsp;</li>
+
+
+
+          <div class="card mx-2 shadow rounded">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="d-flex flex-row justify-content-between align-items-center" align="center">
+                            <div class="text-center align-middle">
+                                {% if match.score_home > match.score_away %}
+                                <h2 style="font-weight: bold;"><img src="/static/flags/{{match.home_team.alpha_2}}.gif"
+                                        alt="Home Flag" class="rounded m-3" width="80">
+                                    {{match.home_team.name}}</h2>
+                                {% else %}
+                                <h2><img src="/static/flags/{{match.home_team.alpha_2}}.gif" alt="Home Flag"
+                                        class="rounded m-3" width="80" padding-right="20px">{{match.home_team.name}}</h2>
+                                {% endif %}
+                            </div>
+    
+                            <div class="text-center align-middle">
+                                {% if match.score_home > match.score_away %}
+                                <h2 style="font-weight: bold;">{{match.score_home}}</h2>
+                                {% else %}
+                                <h2>{{match.score_home}}</h2>
+                                {% endif %}
+                            </div>
+    
+                            <div class="text-center align-middle">
+                                <h2>VS</h2>
+                            </div>
+    
+                            <div class="text-center align-middle">
+                                {% if match.score_away > match.score_home %}
+                                <h2 style="font-weight: bold;">{{match.score_away}}</h2>
+                                {% else %}
+                                <h2>{{match.score_away}}</h2>
+                                {% endif %}
+                            </div>
+    
+                            <div class="text-center align-middle">
+                                {% if match.score_away > match.score_home %}
+                                <h2 style="font-weight: bold;">{{match.away_team.name}}<img
+                                        src="/static/flags/{{match.away_team.alpha_2}}.gif" alt="Away Flag"
+                                        class="rounded m-3" width="80">
+                                </h2>
+                                {% else %}
+                                <h2>{{match.away_team.name}}<img src="/static/flags/{{match.away_team.alpha_2}}.gif"
+                                        alt="Away Flag" class="rounded m-3" width="80">
+                                </h2>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="text-center align-middle">{{match.date.strftime("%a %b %d %I:%M %p")}}</h5>
+    
+                </div>
+            </div>
+        </div>

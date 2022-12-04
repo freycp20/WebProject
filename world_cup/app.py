@@ -17,6 +17,7 @@ from flask import request, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, LoginManager, login_required
 from flask_login import login_user, logout_user, current_user
+from datetime import datetime
 
 # Make sure this directory is in your Python path for imports
 scriptdir = os.path.dirname(os.path.abspath(__file__))
@@ -301,8 +302,9 @@ def get_matches():
     # match.home_team-match.away_team
     #senegal-netherlands
     #/match/senegal-netherlands/
-    match = Match.query.first()
-    return render_template("match.html", match=match, current_user=current_user)
+    presentDate = datetime(year=2022, month=11, day=27).date()
+    match = Match.query.all()[0]
+    return render_template("match.html", match=match, current_user=current_user, presentDate=presentDate)
 
 @app.get('/logout/')
 @login_required

@@ -3,74 +3,107 @@
 {% block head %}
 {{super()}}
 <!-- PUT EXTRA HEAD CONTENT BELOW THIS LINE -->
-
+<script src="/static/whether.js"></script>
 <!-- ANY STUFF YOU NEED TO IMPORT GETS PUT HERE -->
+<meta id="my-data" data-lat="{{match.stadiumObj.latitude}}" data-long="{{match.stadiumObj.longitude}}">
 
+<style>
+    h2 {
+        margin: 0;
+    }
+</style>
 <!-- EDIT HEAD STUFF ABOVE THIS LINE -->
 {% endblock head %}
 {% block main %}
 <!-- DO NOT EDIT ABOVE THIS LINE UNLESS YOU ARE DOING 3RD PARTY API -->
 
 <!-- THIS IS WHERE ALL YOUR MATCH STUFF GOES MANNY -->
-
-<div>
-    <a href="{{url_for('get_matches')}}">      &lang; back to all games</a>
-    <!-- upcoming match or match history -->
-    <h5 class="text-center align-middle">Upcoming</h5>
-</div>
-
-<div class="card">
-    <div class="card-body">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col" align="right">
-                    <h2><img src="/static/flags/{{match.home_team.alpha_2}}.gif" alt="Home Flag" class="rounded m-3"
-                            width="130">{{match.home_team.name}}</h2>
-                </div>
-
-                <div class="col" align="center" width="130">
-                    <h2>VS</h2>
-                </div>
-                <div class="col" align="left">
-                <h2>{{match.away_team.name}}<img src="/static/flags/{{match.away_team.alpha_2}}.gif" alt="Away Flag" class="rounded m-3"
-                        width="130"></h2>
+<div class="container">
+    <div class="col">
+        <a class="btn btn-outline-primary mx-2" href="{{url_for('get_matches')}}"> &lang; back to all games</a>
+        <!-- upcoming match or match history -->
+        {% if presentDate > match.date %}
+        <h5 class="text-center">Upcoming Game</h5>
+        {% elif presentDate < match.date %} <h5 class="text-center align-middle">Previous Game</h5>
+            {% else %}
+            <h5 class="text-center align-middle">Next Game</h5>
+            {% endif %}
+    </div>
+    <div class="container mx-2 shadow rounded border">
+        <div class="row d-flex align-items-center">
+            <div class="col d-flex my-5 justify-content-start align-items-center">
+                <img src="/static/flags/{{match.home_team.alpha_2}}.gif"
+                alt="Home Flag" class="rounded m-3" width="80">
+                <h2 style="{{'font-weight: bold;' if match.score_home > match.score_away else '' }}">
+                {{match.home_team.name}}
+                </h2>
+            </div>
+            <div class="col-4">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="col d-flex align-items-center text-center">
+                        <h1 style="{{'font-weight: bold;' if match.score_home > match.score_away else '' }}">{{match.score_home}}</h1>
                     </div>
+                    <div class="col-8 text-center">
+                        <h1>vs</h1>
+                    </div>
+                    <div class="col d-flex justify-content-end align-items-center text-center">
+                        <h1 style="{{'font-weight: bold;' if match.score_away > match.score_home else '' }}">{{match.score_away}}</h1>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col d-flex my-5 justify-content-end align-items-center">
+                <h2 style="{{'font-weight: bold;' if match.score_away > match.score_home else '' }}">{{match.away_team.name}}
+                    </h2>
+                    <img src="/static/flags/{{match.away_team.alpha_2}}.gif"
+                        alt="Away Flag" class="rounded m-3" width="80">
+            </div>
+                    
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col mb-3">
+                <h5 class="text-center align-middle">{{match.date.strftime("%a %b %d %I:%M %p")}}</h5>
             </div>
         </div>
     </div>
-</div>
 
 
-<div class="card">
-    <div class="card-body">
-        <h2 class="text-center align-middle">{{match.date.strftime("%a %b %d %I:%M %p")}}</h2>
-    </div>
-</div>
-<!-- TODO: Stadium and weather -->
-<div class="row">
-    <div class="col-lg-6 mb-4">
-        <div class="card">
-            <img class="card-img-top" src="" alt="">
+    <!-- TODO: Stadium and weather -->
+    <div class="d-flex row p-2 mw-100 m-auto">
+        <div class="col-lg-6 mb-4 p-2 rounded">
+            <div class="card has-bg-img shadow p-2 rounded"
+                style="background-size: cover">
+                <h3 class="card-body rounded" class="shadow">
+                    Stadium: {{match.stadiumObj.name}}
+                </h3>
+                <img class="bg-img p-2" src="/static/stadium_imgs/{{match.stadiumObj.name|replace(' ', '-')}}.jpg"
+                    alt="stadium" width="500" height="243">
+            </div>
+        </div>
 
-            <div class="card-body">
-                <h2>><h2>Stadium: </h2>{{match.stadiumObj.name}}</h2>
-            
+        <div class="col-lg-6 mb-4 p-2 rounded">
+            <div class="shadow card rounded shadow p-2">
+                <div class="card-body rounded">
+                    <p class="card-text">
+                        <input type="hidden" id="lat" value="{{match.stadiumObj.latitude}}">
+                        <input type="hidden" id="long" value="{{match.stadiumObj.longitude}}">
+                    <h2 id="city">Weather in test</h2>
+                    <hr>
+                    <div style="display: flex; align-items: center; padding-top: 17px; " class="flex pt-4">
+                        <img src="https://openweathermap.org/img/wn/04n.png" alt="" id="icon" />
+                        <h3 id="description">Cloudy</h3>
+                    </div>
+                    <h5 id="temp">Temperature: 51°F</h5>
+                    <h5 id="humidty">Humidity: 60%</h5>
+                    <h5 id="wind" class="pb-3">Wind Speed: 6.3 km/hr</h5>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-lg-6 mb-4">
-        <div class="card">
-            <img class="card-img-top" src="" alt="">
-            <div class="card-body">
-                <p class="card-text">
-                    Some quick example text to build on the 
-                    card title and make up the bulk of the 
-                    card's content.
-                </p>
-            </div>
-        </div>
-    </div>
+    
 </div>
+
 
 <!-- DO NOT EDIT BELOW THIS LINE -->
 {% endblock main %}
