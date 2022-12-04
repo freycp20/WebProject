@@ -36,6 +36,9 @@ from loginforms import RegisterForm, LoginForm
 dbfile = os.path.join(scriptdir, "users.sqlite3")
 pepfile = os.path.join(scriptdir, "pepper.bin")
 
+date = datetime.now()
+# date = datetime(2022,11,27)
+
 # open and read the contents of the pepper file into your pepper key
 # NOTE: you should really generate your own and not use the one from the starter
 with open(pepfile, 'rb') as fin:
@@ -363,10 +366,8 @@ def post_login():
 @app.get('/')
 def index():
     #matches = Match.query.order_by(Match.date).all()
-    date = datetime(2022,11,27)
     #nov 27
     
-    # date = datetime.now()
 
     matches = Match.query.filter(Match.date > date).order_by(Match.date).all()
     for match in matches:
@@ -386,12 +387,13 @@ def get_matches(match_id):
     # match.home_team-match.away_team
     #senegal-netherlands
     #/match/senegal-netherlands/
-    presentDate = datetime(year=2022, month=11, day=27)
+    # presentDate = datetime(year=2022, month=11, day=27)
+    presentDate = date
     # match = Match.query.all()[0]
     print(match_id)
     match = Match.query.filter(Match.id == match_id).first()
     print(match)
-    if not match.score_home or not match.score_away:
+    if match.score_home == None or match.score_away == None:
         match.score_home = -1
         match.score_away = -1
     match_date_as_date = datetime.strptime(match.date, "%Y-%m-%d %H:%M:%S.%f")

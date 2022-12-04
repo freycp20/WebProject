@@ -67,7 +67,7 @@
                             <tr onclick="window.location='match/{{prevGame.id}}'">
                                 <td style="vertical-align:middle">{{prevGame.date.strftime("%a %b %d %I:%M %p")}}</td>
                                 <td><img src="/static/flags/{{prevGame.home_team.alpha_2}}.gif" class="rounded m-3" height="28" width="40" alt="{{prevGame.home_team.name}} flag"/>{{prevGame.home_team.name}}</td>
-                                {% if prevGame.score_home and prevGame.score_away %}
+                                {% if prevGame.score_home != None and prevGame.score_away != None %}
                                     <td style="vertical-align:middle" >Score: {{prevGame.score_home}} - {{prevGame.score_away}}</td>
                                 {% else %}
                                     <td style="vertical-align:middle" >Score: None</td>
