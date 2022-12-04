@@ -316,14 +316,21 @@ def index():
     leaderBoardScores = User.query.order_by(User.score.asc()).all()
     return render_template('schedule.html', current_user=current_user, matches=matches, teams=teams, prevGames = prevGames[-2:], leaderBoardScores=leaderBoardScores)
 
-@app.get('/match/')
-def get_matches():
+@app.get('/match/<int:match_id>/')
+def get_matches(match_id):
     # match.home_team-match.away_team
     #senegal-netherlands
     #/match/senegal-netherlands/
-    presentDate = datetime(year=2022, month=11, day=27).date()
-    match = Match.query.all()[0]
-    return render_template("match.html", match=match, current_user=current_user, presentDate=presentDate)
+    presentDate = datetime(year=2022, month=11, day=27)
+    # match = Match.query.all()[0]
+    print(match_id)
+    match = Match.query.filter(Match.id == match_id).first()
+    print(match)
+    if not match.score_home or not match.score_away:
+        match.score_home = -1
+        match.score_away = -1
+    match_date_as_date = datetime.strptime(match.date, "%Y-%m-%d %H:%M:%S.%f")
+    return render_template("match.html", match=match, current_user=current_user, presentDate=presentDate, match_date=match_date_as_date)
 
 @app.get('/logout/')
 @login_required
