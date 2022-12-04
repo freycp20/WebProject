@@ -16,16 +16,20 @@ function refresh_scores() {
 }
 function update_table(data) {
     let tableBody = document.getElementById("leaderboard-body")
+    let currUserEmail = tableBody.getAttribute("data-curr-user")
     tableBody.innerHTML = ""
     // const items = Object.values(data).sort((first, second) => {
     //     return second - first;
     // });
 
     for (const item of sortObj(data)) {
+        let isCurrUser =  item[0] === currUserEmail ? "(me)" : ""
+        console.log(currUserEmail)
+        console.log(item[0])
         let tr = document.createElement("tr")
 
         let name = document.createElement("td")
-        name.innerText = item[0]
+        name.innerText = `${item[0]} ${isCurrUser}` 
 
         let score = document.createElement("td")
         score.innerText = item[1]

@@ -29,10 +29,10 @@
                             <th>Points</th>
                             </tr>
                         </thead>
-                        <tbody id="leaderboard-body">
+                        <tbody id="leaderboard-body" data-curr-user="{{current_user.email}}">
                             {% for leaderBoardScore in leaderBoardScores %}
                             <tr>
-                                <td>{{leaderBoardScore.email}}</td>
+                                <td>{{leaderBoardScore.email}} {{'(me)' if current_user.email == leaderBoardScore.email else ''}}</td>
                                 <td>{{leaderBoardScore.score}}</td>
                             </tr>
                             {% endfor %}
@@ -68,7 +68,7 @@
                                 <td style="vertical-align:middle">{{prevGame.date.strftime("%a %b %d %I:%M %p")}}</td>
                                 <td><img src="/static/flags/{{prevGame.home_team.alpha_2}}.gif" class="rounded m-3" height="28" width="40" alt="{{prevGame.home_team.name}} flag"/>{{prevGame.home_team.name}}</td>
                                 {% if prevGame.score_home and prevGame.score_away %}
-                                    <td style="vertical-align:middle" >Score: {{prevGame.score_home}} - {{preGame.score_away}}</td>
+                                    <td style="vertical-align:middle" >Score: {{prevGame.score_home}} - {{prevGame.score_away}}</td>
                                 {% else %}
                                     <td style="vertical-align:middle" >Score: None</td>
                                 {% endif %}
