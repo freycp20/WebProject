@@ -48,6 +48,7 @@ main{
   
     li.game.winner{
       font-weight:bold;
+      background-color: lightgreen;
     }
     /* li.game span{
       float:right;
