@@ -46,12 +46,12 @@
     font-size:xx-large;
   }
 
-  .container2 {
+  .flex-container {
     float: center;
     height: 100 px;
     width: 100%;
     display: flex;
-    padding-left: 45px;
+    justify-content: center;
    
   } 
 
