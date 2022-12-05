@@ -59,7 +59,7 @@ function checkIfComplete() {
     }
     doRequest(data).then(resp => {
         console.log(resp);
-        location.href =  `${window.location.host}/view-bracket/`
+        location.href =`/view-bracket/`
     });
     // let num_teams = 8
 
@@ -70,10 +70,10 @@ function checkIfComplete() {
 
 async function doRequest(data) {
     
-    console.log(window.location.port)
+    console.log(window.location.protocol.port)
     console.log()
     
-    let url = `${window.location.host}/create-bracket/`;
+    let url = `/create-bracket/`;
     // let data = {'name': 'John Doe', 'occupation': 'John Doe'};
 
     let res = await fetch(url, {
