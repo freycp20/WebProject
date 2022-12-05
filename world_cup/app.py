@@ -18,6 +18,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, LoginManager, login_required
 from flask_login import login_user, logout_user, current_user
 from datetime import datetime
+# from sqlalchemy import or_
 
 # Make sure this directory is in your Python path for imports
 scriptdir = os.path.dirname(os.path.abspath(__file__))
@@ -34,6 +35,9 @@ from loginforms import RegisterForm, LoginForm
 # Identify necessary files
 dbfile = os.path.join(scriptdir, "users.sqlite3")
 pepfile = os.path.join(scriptdir, "pepper.bin")
+
+date = datetime.now()
+# date = datetime(2022,11,27)
 
 # open and read the contents of the pepper file into your pepper key
 # NOTE: you should really generate your own and not use the one from the starter
@@ -188,7 +192,7 @@ def post_input_scores():
             flash(f"Score could not be input!")
             # reload new form
             return redirect(url_for('get_input_scores'))
-
+        update_all_users_scores()
         flash(f"Score was updated successfully!")
         return redirect(url_for('get_input_scores'))
     else:
@@ -204,9 +208,25 @@ def post_input_scores():
 @login_required
 def get_create_bracket():
     # teams = Team.query.all()
-    matches = Match.query.order_by(Match.date).all()
+    # matches = Match.query.order_by(Match.date).all()
+    
+    start_date = datetime(2022,12,3)
+    end_date = datetime(2022, 12,7)
+    #nov 27
+    
+    # date = datetime.now()
+
+    matches = Match.query.filter(Match.date >= start_date).filter(Match.date <= end_date).all()
     for match in matches:
         match.date = datetime.strptime(match.date, "%Y-%m-%d %H:%M:%S.%f")
+        print(match.id)
+        print(match.date)
+
+    print(matches)
+
+    matches[5], matches[6] = matches[6], matches[5]
+    print(matches)
+
     filtered_matches = []
     existing_teams = []
     for i in range(8):
@@ -229,14 +249,62 @@ def post_create_bracket():
     db.session.commit()
     return redirect(url_for("get_view_bracket"))
 
+def update_all_users_scores():
+    users = User.query.all()
+    for user in users:
+        update_user_scores(user)
+
+def update_user_scores(user):
+    bracket = user.bracket
+    user_score = 0
+    if bracket != None:
+        bracket = json.loads(bracket).get("input_labels")
+        matches = 8
+        skip_index = 0
+        for i in range(4):
+            for j in range(matches):
+                print(matches)
+                print(skip_index)
+                # print(matches)
+                home_team = bracket[skip_index + j*2]
+                away_team = bracket[skip_index + j*2 + 1]
+                n = [home_team["team_name"], away_team["team_name"]]
+                date = datetime(2022,12,3)
+                match = Match.query.filter(Match.date > date).filter((Match.home_team.has(name=n[0]) | Match.home_team.has(name=n[1])) & (Match.away_team.has(name=n[0]) | Match.away_team.has(name=n[1]))).first()
+                 
+                chosen = home_team if home_team["checked"] else away_team
+                checked = chosen["team_name"]
+                
+                if match:
+                    print(match)
+                    winning_team = None
+                    if match.score_home != None and match.score_away != None:
+                        if match.score_home > match.score_away:
+                            winning_team = match.home_team.name
+                        elif match.score_home < match.score_away:
+                            winning_team = match.away_team.name
+                        
+                    if winning_team == checked:
+                        chosen["correct"] = True
+                        print("CORRECT CHOICE")
+                        user_score += 1
+                print(home_team)
+                print(away_team)
+
+                print("\n\n")
+            skip_index += matches*2
+            matches //=2
+        
+        user.score = user_score
+        db.session.commit()
+    return user_score, bracket
+
 @app.get('/view-bracket/')
 @login_required
 def get_view_bracket():
-    bracket = current_user.bracket
-    if bracket != None:
-        bracket = json.loads(bracket).get("input_labels")
-
-    return render_template("view_bracket.html", current_user=current_user, bracket=bracket)
+    user_score, bracket = update_user_scores(current_user)
+    print(bracket)
+    return render_template("view_bracket.html", current_user=current_user, bracket=bracket, score=user_score)
 
 @app.get('/register/')
 def get_register():
@@ -251,7 +319,7 @@ def post_register():
         user = User.query.filter_by(email=form.email.data).first()
         # if the email address is free, create a new user and send to login
         if user is None:
-            user = User(email=form.email.data, password=form.password.data, admin=form.admin_key.data)
+            user = User(email=form.email.data, password=form.password.data, admin=form.admin_key.data, score=0)
             db.session.add(user)
             db.session.commit()
             return redirect(url_for('get_login'))
@@ -298,10 +366,8 @@ def post_login():
 @app.get('/')
 def index():
     #matches = Match.query.order_by(Match.date).all()
-    date = datetime(2022,11,27)
     #nov 27
     
-    # date = datetime.now()
 
     matches = Match.query.filter(Match.date > date).order_by(Match.date).all()
     for match in matches:
@@ -313,16 +379,25 @@ def index():
     for match in prevGames:
         match.date = datetime.strptime(match.date, "%Y-%m-%d %H:%M:%S.%f")
     #matches[1:] - shows matches from current and on (in html)
-    leaderBoardScores = User.query.order_by(User.score.asc()).all()
+    leaderBoardScores = User.query.order_by(User.score.desc()).all()
     return render_template('schedule.html', current_user=current_user, matches=matches, teams=teams, prevGames = prevGames[-2:], leaderBoardScores=leaderBoardScores)
 
-@app.get('/match/')
-def get_matches():
+@app.get('/match/<int:match_id>/')
+def get_matches(match_id):
     # match.home_team-match.away_team
     #senegal-netherlands
     #/match/senegal-netherlands/
-    match = Match.query.first()
-    return render_template("match.html", match=match, current_user=current_user)
+    # presentDate = datetime(year=2022, month=11, day=27)
+    presentDate = date
+    # match = Match.query.all()[0]
+    print(match_id)
+    match = Match.query.filter(Match.id == match_id).first()
+    print(match)
+    if match.score_home == None or match.score_away == None:
+        match.score_home = -1
+        match.score_away = -1
+    match_date_as_date = datetime.strptime(match.date, "%Y-%m-%d %H:%M:%S.%f")
+    return render_template("match.html", match=match, current_user=current_user, presentDate=presentDate, match_date=match_date_as_date)
 
 @app.get('/logout/')
 @login_required

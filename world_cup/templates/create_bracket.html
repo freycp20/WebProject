@@ -22,7 +22,7 @@
     </div>
 </div> -->
 {% if current_user.bracket %}
-<h1>You have already made a bracket! View it here!</h1>
+<h1>You have already made a bracket! View it <a href="{{url_for('get_view_bracket')}}">here!</a></h1>
 {% else %}
 <h1>World Cup Bracket</h1>
 <main id="tournament" class="containers">
@@ -92,7 +92,6 @@
                 next="round{{round + 1}}_{{((loop.index-1)/2 + 1)|round(0, 'floor')|int}}_{{team}}">
             <label for="round{{round}}_{{loop.index}}_home_team" id="round{{round}}_{{loop.index}}_home_team-label"
                 hidden></label>
-            <!-- {{loop.index}} -->
         </li>
         <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom ">
             <input data_match_id="{{i}}" class="game_input" type="hidden" name="round{{round}}_{{loop.index}}"
@@ -117,7 +116,7 @@
 
             <input data_match_id="{{i}}" class="game_input" type="hidden" name="round{{round}}_{{loop.index}}"
                 id="round{{round}}_{{loop.index}}_home_team" value="{{home_team}}" data_round="{{round}}"
-                next="round{{round + 1}}_{{((loop.index-1)/2 + 1)|round(0, 'floor')|int}}_{{team}}">
+                next="round5_0_home_team">
             <label for="round{{round}}_{{loop.index}}_home_team" id="round{{round}}_{{loop.index}}_home_team-label"
                 hidden></label>
             <!-- {{loop.index}} -->
@@ -125,7 +124,7 @@
         <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom ">
             <input data_match_id="{{i}}" class="game_input" type="hidden" name="round{{round}}_{{loop.index}}"
                 id="round{{round}}_{{loop.index}}_away_team" value="{{away_team}}" data_round="{{round}}"
-                next="round{{round + 1}}_{{((loop.index-1)/2 + 1)|round(0, 'floor')|int}}_{{team}}">
+                next="round5_0_home_team">
             <label for="round{{round}}_{{loop.index}}_away_team" id="round{{round}}_{{loop.index}}_away_team-label"
                 hidden></label>
 
@@ -136,13 +135,20 @@
     </ul>
     <ul class="round round-5">
         <li class="spacer">&nbsp;</li>
+        <li id="round5_1_home_team-li" class="game game-top">
 
-        <li class="game game-top "></li>
+            <input data_match_id="1" class="game_input" type="hidden" name="round5_0"
+                id="round5_0_home_team" value="{{home_team}}" data_round="5"
+                next="">
+            <label for="round5_0_home_team" id="round5_0_home_team-label"
+                hidden></label>
+        </li>
+        <!-- <li class="game game-top "></li> -->
         <!-- <li class="game game-spacer">&nbsp;</li>  -->
         <li class="spacer">&nbsp;</li>
     </ul>
     <!-- </div> -->
-    <button id="save_bracket">Save</button>
 </main>
+<button id="save_bracket" class="btn btn-outline-primary m-2">Save</button>
 {% endif %}
 {% endblock main %}

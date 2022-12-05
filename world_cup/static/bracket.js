@@ -3,121 +3,9 @@ window.addEventListener("DOMContentLoaded", async () => {
     setEventListeneners(9, 1)
     setEventListeneners(5, 2)
     setEventListeneners(3, 3)
-    setEventListeneners(1, 4)
+    setEventListeneners(2, 4)
 
     document.getElementById("save_bracket").addEventListener("click", checkIfComplete)
-    // for (let i=1; i<9; i++) {
-        
-    //     let h_t_input = document.getElementById(`round1_${i}_home_team`)
-    //     let h_t_li = document.getElementById(`round1_${i}_home_team-li`)
-    //     let h_t_label = document.getElementById(`round1_${i}_home_team-label`)
-    //     let a_t_input = document.getElementById(`round1_${i}_away_team`)
-    //     let a_t_li = document.getElementById(`round1_${i}_away_team-li`)
-    //     let a_t_label = document.getElementById(`round1_${i}_away_team-label`)
-    //     if (i%2 == 1) {
-    //         h_t_input.addEventListener("click", evt => {
-    //             setTeam(evt, h_t_label, "home_team")
-    //         })
-    //         a_t_input.addEventListener("click", evt => {
-    //             setTeam(evt, a_t_label, "home_team")
-    //         })
-    //     } else {
-    //         h_t_input.addEventListener("click", evt => {
-    //             setTeam(evt, h_t_label, "away_team")
-    //         })
-    //         a_t_input.addEventListener("click", evt => {
-    //             setTeam(evt, a_t_label, "away_team")
-    //         })
-    //     }
-    //     console.log(h_t_input.getAttribute("next"))
-    //     console.log(h_t_input)
-    //     // a_t_input.addEventListener("click", evt => {
-    //     //     // console.log(evt.target)
-    //     //     // console.log(h_t_input)
-    //     //     if (i%2 == 1) {
-    //     //         let index = Math.floor((i-1)/2 + 1)
-    //             // let next_input = document.getElementById(`round2_${index}_home_team`)
-    //             // let next_label = document.getElementById(`round2_${index}_home_team-label`)
-    //             // console.log(h_t_label)
-    //             // console.log(h_t_input)
-    //             // console.log(h_t_li)
-    //             // console.log(next_label)
-    //             // console.log(next_input)
-    //             // next_input.type = "radio"
-    //             // next_label.removeAttribute("hidden")
-    //             // next_label.innerText = h_t_label.innerText
-    //     //     } else {
-    //     //         let index = Math.floor((i-1)/2 + 1)
-    //     //         let next_input = document.getElementById(`round2_${index}_away_team`)
-    //     //         let next_label = document.getElementById(`round2_${index}_away_team-label`)
-    //     //         console.log(a_t_label)
-    //     //         console.log(a_t_input)
-    //     //         console.log(a_t_li)
-    //     //         console.log(next_label)
-    //     //         console.log(next_input)
-    //     //         next_input.type = "radio"
-    //     //         next_label.removeAttribute("hidden")
-    //     //         next_label.innerText = a_t_label.innerText
-    //     //     }
-    //     //     // console.log(h_t.value)
-    //     //     // let val = floor(i/2)
-            
-    //     //     // document.getElementById("round2_0_home_li").innerHTML = `<input type="radio" name="{{loop.index}}" id="{{}}_home_team" value="{{home_team}}">${h_t_li.innerText}</input<br>`
-    //     //     // <input type="radio" name="{{loop.index}}" id="{{loop.index}}_home_team" value="{{home_team}}">{{match.home_team.name}}</input<br>
-
-    //     //     // var team = document.getElementById("1_home_team").innerText
-    //     //     // console.log(team4
-    //     // })
-    //     // h_t_input.addEventListener("click", evt => {
-    //     //     // console.log(evt.target)
-    //     //     // console.log(h_t_input)
-    //     //     if (i%2 == 1) {
-    //     //         let index = Math.floor((i-1)/2 + 1)
-    //     //         let next_input = document.getElementById(`round2_${index}_home_team`)
-    //     //         let next_label = document.getElementById(`round2_${index}_home_team-label`)
-    //     //         console.log(h_t_label)
-    //     //         console.log(h_t_input)
-    //     //         console.log(h_t_li)
-    //     //         console.log(next_label)
-    //     //         console.log(next_input)
-    //     //         next_input.type = "radio"
-    //     //         next_label.removeAttribute("hidden")
-    //     //         next_label.innerText = h_t_label.innerText
-    //     //     } else {
-    //     //         let index = Math.floor((i-1)/2 + 1)
-    //     //         let next_input = document.getElementById(`round2_${index}_away_team`)
-    //     //         let next_label = document.getElementById(`round2_${index}_away_team-label`)
-    //     //         console.log(a_t_label)
-    //     //         console.log(a_t_input)
-    //     //         console.log(a_t_li)
-    //     //         console.log(next_label)
-    //     //         console.log(next_input)
-    //     //         next_input.type = "radio"
-    //     //         next_label.removeAttribute("hidden")
-    //     //         next_label.innerText = a_t_label.innerText
-    //     //     }
-    //     //     // console.log(h_t.value)
-    //     //     // let val = floor(i/2)
-            
-    //     //     // document.getElementById("round2_0_home_li").innerHTML = `<input type="radio" name="{{loop.index}}" id="{{}}_home_team" value="{{home_team}}">${h_t_li.innerText}</input<br>`
-    //     //     // <input type="radio" name="{{loop.index}}" id="{{loop.index}}_home_team" value="{{home_team}}">{{match.home_team.name}}</input<br>
-
-    //     //     // var team = document.getElementById("1_home_team").innerText
-    //     //     // console.log(team4
-    //     // })
-    // }
-    // h_t.addEventListener("click", evt => {
-    //     // console.log(evt.target)
-    //     console.log(h_t)
-    //     console.log(h_t.value)
-    //     document.getElementById("round2_0_home_li").innerHTML = `<input type="radio" name="{{loop.index}}" id="{{loop.index}}_home_team" value="{{home_team}}">${h_t_li.innerText}</input<br>`
-    //     // <input type="radio" name="{{loop.index}}" id="{{loop.index}}_home_team" value="{{home_team}}">{{match.home_team.name}}</input<br>
-
-    //     // var team = document.getElementById("1_home_team").innerText
-    //     // console.log(team)
-    // })
-    // document.getElementById()
-
 })
 function checkIfComplete() {
 
@@ -165,12 +53,13 @@ function checkIfComplete() {
     //         }
     //     } 
     // }
-    if (count_selected != 15) {
+    if (count_selected != 16) {
         console.log("Not complete")
         return
     }
     doRequest(data).then(resp => {
         console.log(resp);
+        location.href = "http://127.0.0.1:5000/view-bracket/"
     });
     // let num_teams = 8
 
@@ -207,6 +96,7 @@ async function doRequest(data) {
 
 
 function setEventListeneners(n, round) {
+    let last = round === 4
     for (let i = 1; i<n;i++) {
         let h_t_input = document.getElementById(`round${round}_${i}_home_team`)
         // let h_t_li = document.getElementById(`round1_${i}_home_team-li`)
@@ -217,25 +107,26 @@ function setEventListeneners(n, round) {
         // console.log(h_t_input)
         if (i%2 == 1) {
             h_t_input.addEventListener("click", evt => {
-                setTeam(evt, h_t_label, "home_team")
+                setTeam(evt, h_t_label, "home_team", last)
             })
             a_t_input.addEventListener("click", evt => {
-                setTeam(evt, a_t_label, "home_team")
+                setTeam(evt, a_t_label, "home_team", last)
             })
         } else {
             h_t_input.addEventListener("click", evt => {
-                setTeam(evt, h_t_label, "away_team")
+                setTeam(evt, h_t_label, "away_team", last)
             })
             a_t_input.addEventListener("click", evt => {
-                setTeam(evt, a_t_label, "away_team")
+                setTeam(evt, a_t_label, "away_team", last)
             })
         }
         // console.log(h_t_input.getAttribute("next"))
         // console.log(h_t_input)
     }
 }
-function setTeam(event, label, team) {
+function setTeam(event, label, team, last) {
     let next = event.currentTarget.getAttribute("next")
+    console.log(next)
     // console.log(event.currentTarget.getAttribute("next") | 0)
     
     // console.log(`LABEL : ${label.innerText}`)
@@ -245,11 +136,16 @@ function setTeam(event, label, team) {
     // console.log(`round${round}_${index}_${team}-label`)
     let next_input = document.getElementById(next)
     let next_label = document.getElementById(`${next}-label`)    
-    
     next_input.type = "radio"
     next_label.removeAttribute("hidden")
     next_label.innerText = label.innerText
+    if (last) {
+        next_input.checked = true
+    }
     let checked = next_input.checked
+    // } else {
+        // next_input.checked = true
+    // }
     // console.log(checked)
     // console.log(next_label)
     // console.log(event.currentTarget.labels[0])

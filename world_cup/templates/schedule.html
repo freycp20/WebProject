@@ -29,10 +29,10 @@
                             <th>Points</th>
                             </tr>
                         </thead>
-                        <tbody id="leaderboard-body">
+                        <tbody id="leaderboard-body" data-curr-user="{{current_user.email}}">
                             {% for leaderBoardScore in leaderBoardScores %}
                             <tr>
-                                <td>{{leaderBoardScore.email}}</td>
+                                <td>{{leaderBoardScore.email}} {{'(me)' if current_user.email == leaderBoardScore.email else ''}}</td>
                                 <td>{{leaderBoardScore.score}}</td>
                             </tr>
                             {% endfor %}
@@ -64,11 +64,11 @@
                         </thead>
                         <tbody>
                             {% for prevGame in prevGames %}
-                            <tr onclick="window.location='match'">
+                            <tr onclick="window.location='match/{{prevGame.id}}'">
                                 <td style="vertical-align:middle">{{prevGame.date.strftime("%a %b %d %I:%M %p")}}</td>
                                 <td><img src="/static/flags/{{prevGame.home_team.alpha_2}}.gif" class="rounded m-3" height="28" width="40" alt="{{prevGame.home_team.name}} flag"/>{{prevGame.home_team.name}}</td>
-                                {% if prevGame.score_home and prevGame.score_away %}
-                                    <td style="vertical-align:middle" >Score: {{prevGame.score_home}} - {{preGame.score_away}}</td>
+                                {% if prevGame.score_home != None and prevGame.score_away != None %}
+                                    <td style="vertical-align:middle" >Score: {{prevGame.score_home}} - {{prevGame.score_away}}</td>
                                 {% else %}
                                     <td style="vertical-align:middle" >Score: None</td>
                                 {% endif %}
@@ -76,6 +76,7 @@
                                 <td style="vertical-align:middle">{{prevGame.stadiumObj.name}}</td>
                               
                             </tr>
+                            
                             {% endfor %}
                         </tbody>
                     </table>
@@ -98,7 +99,7 @@
                             
                         </thead>
                         <tbody>
-                            <tr onclick="window.location='match'" >
+                            <tr onclick="window.location='match/{{matches[0].id}}'" >
                                 <td style="vertical-align:middle">{{matches[0].date.strftime("%a %b %d %I:%M %p")}}</td>
                                 <td><img src="/static/flags/{{matches[0].home_team.alpha_2}}.gif" class="rounded m-3" height="28" width="40" alt="{{matches[0].home_team.name}} flag"/>{{matches[0].home_team.name}}</td>
                                 <td><img src="/static/flags/{{matches[0].away_team.alpha_2}}.gif" class="rounded m-3" height="28" width="40" alt="{{matches[0].away_team.name}} flag"/>{{matches[0].away_team.name}}</td>
@@ -130,7 +131,7 @@
                         
                         <tbody>
                             {% for match in matches[1:] %}
-                            <tr onclick="window.location='match'" >
+                            <tr onclick="window.location='match/{{match.id}}'" >
                                 <td style="vertical-align:middle">{{match.date.strftime("%a %b %d %I:%M %p")}}</td>
                                 <td><img src="/static/flags/{{match.home_team.alpha_2}}.gif" class="rounded m-3" height="28" width="40" alt="{{match.home_team.name}} flag"/>{{match.home_team.name}}</td>
                                 <td><img src="/static/flags/{{match.away_team.alpha_2}}.gif" class="rounded m-3" height="28" width="40" alt="{{match.away_team.name}} flag"/>{{match.away_team.name}}</td>
