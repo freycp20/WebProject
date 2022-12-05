@@ -22,7 +22,7 @@
     </div>
 </div> -->
 {% if current_user.bracket %}
-<h1>You have already made a bracket! View it here!</h1>
+<h1>You have already made a bracket! View it <a href="{{url_for('get_view_bracket')}}">here!</a></h1>
 {% else %}
 <h1>World Cup Bracket</h1>
 <main id="tournament" class="containers">
