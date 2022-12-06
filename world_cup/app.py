@@ -389,10 +389,7 @@ def get_matches(match_id):
     #/match/senegal-netherlands/
     # presentDate = datetime(year=2022, month=11, day=27)
     presentDate = date
-    # match = Match.query.all()[0]
-    print(match_id)
     match = Match.query.filter(Match.id == match_id).first()
-    print(match)
     if match.score_home == None or match.score_away == None:
         match.score_home = -1
         match.score_away = -1

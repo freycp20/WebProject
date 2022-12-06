@@ -68,11 +68,11 @@
 
 
     <!-- TODO: Stadium and weather -->
-    <div class="d-flex row p-2 mw-100 m-auto">
+    <div class="d-flex row p-2 mw-100  m-auto" >
         <div class="col-lg-6 mb-4 p-2 rounded">
             <div class="card has-bg-img shadow p-2 rounded"
                 style="background-size: cover">
-                <h3 class="card-body rounded" class="shadow">
+                <h3 class="card-body rounded">
                     Stadium: {{match.stadiumObj.name}}
                 </h3>
                 <img class="bg-img p-2" src="/static/stadium_imgs/{{match.stadiumObj.name|replace(' ', '-')}}.jpg"
@@ -89,7 +89,7 @@
                     <h2 id="city">Weather in test</h2>
                     <hr>
                     <div style="display: flex; align-items: center; padding-top: 17px; " class="flex pt-4">
-                        <img src="https://openweathermap.org/img/wn/04n.png" alt="" id="icon" />
+                        <img class="shadow-none" src="https://openweathermap.org/img/wn/04n.png" alt="" id="icon" />
                         <h3 id="description">Cloudy</h3>
                     </div>
                     <h5 id="temp">Temperature: 51°F</h5>
