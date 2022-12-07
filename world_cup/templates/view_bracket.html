@@ -22,10 +22,10 @@
     {% set team = 'home_team' if loop.index%2 == 1 else 'away_team' %}
     {% set home_team = bracket[i*2] %}
     {% set away_team = bracket[i*2+1] %}
-    <li id="round{{round}}_{{loop.index}}_home_team-li" class="game game-top {{'winner' if home_team.get('correct') else ''}}">
+    <li id="round{{round}}_{{loop.index}}_home_team-li" class="game game-top {{'winner' if home_team.get('won') else ''}} {{'correct' if home_team.get('correct') else ''}} {{'incorrect' if home_team.get('correct') == False else ''}}">
         {{home_team.team_name}}
     </li>
-    <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom {{'winner' if away_team.get('correct') else ''}}">
+    <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom {{'winner' if away_team.get('won') else ''}} {{'correct' if away_team.get('correct') else ''}} {{'incorrect' if away_team.get('correct') == False else ''}}">
         {{away_team.team_name}}
     </li>
     <li class="spacer">&nbsp;</li>
@@ -39,10 +39,10 @@
     {% set winner = 'home_team' if i%2 == 1 else 'away_team' %}
     {% set home_team = bracket[16+i*2] %}
     {% set away_team = bracket[16+i*2+1] %}
-    <li id="round{{round}}_{{loop.index}}_home_team-li" class="game game-top {{'winner' if home_team.get('correct') else ''}}">
+    <li id="round{{round}}_{{loop.index}}_home_team-li" class="game game-top {{'winner' if home_team.get('won') else ''}} ">
         {{home_team.team_name}}
     </li>
-    <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom {{'winner' if away_team.get('correct') else ''}}">
+    <li id="round{{round}}_{{loop.index}}_away_team-li" class="game game-bottom {{'winner' if away_team.get('won') else ''}}">
         {{away_team.team_name}}
     </li>
     <li class="spacer">&nbsp;</li>

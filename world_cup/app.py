@@ -36,8 +36,8 @@ from loginforms import RegisterForm, LoginForm
 dbfile = os.path.join(scriptdir, "users.sqlite3")
 pepfile = os.path.join(scriptdir, "pepper.bin")
 
-date = datetime.now()
-# date = datetime(2022,11,27)
+# date = datetime.now()
+date = datetime(2022,11,27)
 
 # open and read the contents of the pepper file into your pepper key
 # NOTE: you should really generate your own and not use the one from the starter
@@ -273,6 +273,7 @@ def update_user_scores(user):
                 match = Match.query.filter(Match.date > date).filter((Match.home_team.has(name=n[0]) | Match.home_team.has(name=n[1])) & (Match.away_team.has(name=n[0]) | Match.away_team.has(name=n[1]))).first()
                  
                 chosen = home_team if home_team["checked"] else away_team
+                not_chosen = home_team if away_team["checked"] else away_team
                 checked = chosen["team_name"]
                 
                 if match:
@@ -281,13 +282,19 @@ def update_user_scores(user):
                     if match.score_home != None and match.score_away != None:
                         if match.score_home > match.score_away:
                             winning_team = match.home_team.name
+                            home_team["won"] = True
+                            away_team["won"] = False
                         elif match.score_home < match.score_away:
                             winning_team = match.away_team.name
-                        
-                    if winning_team == checked:
-                        chosen["correct"] = True
-                        print("CORRECT CHOICE")
-                        user_score += 1
+                            away_team["won"] = True
+                            home_team["won"] = False
+                    if winning_team != None:
+                        if winning_team == checked:
+                            chosen["correct"] = True
+                            print("CORRECT CHOICE")
+                            user_score += 1
+                        else:
+                            chosen["correct"] = False
                 print(home_team)
                 print(away_team)
 

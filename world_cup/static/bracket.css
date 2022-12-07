@@ -48,7 +48,13 @@ main{
   
     li.game.winner{
       font-weight:bold;
+      
+    }
+    li.game.correct {
       background-color: lightgreen;
+    }
+    li.game.incorrect {
+      background-color: orange;
     }
     /* li.game span{
       float:right;
